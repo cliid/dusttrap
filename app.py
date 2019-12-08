@@ -8,7 +8,7 @@ for more, please see: https://github.com/HackerJang
 """
 
 from flask import Flask, request, jsonify, redirect, make_response
-import dialogflow
+import dialogflow, os
 
 from facebook import FacebookMessenger
 from google.api_core.exceptions import InvalidArgument
@@ -18,6 +18,7 @@ app = Flask(__name__)
 
 mw_version = 'v1.0a.1000.01.r1'
 
+os.environ["GOOGLE_APPLICATION_CREDENTIALS"] = '39ddbb18e1794fdf945468c7e71a059d'
 
 @app.route('/')
 def redirect_v1():
@@ -183,4 +184,4 @@ def handle_invalid_usage(error):
 
 
 if __name__ == '__main__':
-    app.run(host='0.0.0.0', port=8082)
+    app.run(host='0.0.0.0')
