@@ -5,7 +5,7 @@ from key import ACCESS_TOKEN
 
 
 class FacebookMessenger:
-    GRAPH_URL = 'https://graph.facebook.com/v3.3/me/messages?access_token='
+    GRAPH_URL = 'https://graph.facebook.com/v5.0/me/messages?access_token='
 
     def send_text_message(self, recipient_id, string):
         request_url = self.GRAPH_URL + ACCESS_TOKEN
