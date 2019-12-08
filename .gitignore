@@ -259,3 +259,7 @@ pip-selfcheck.json
 # UWSGI
 
 uwsgi.ini
+
+#Special Keys
+
+key.py
