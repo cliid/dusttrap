@@ -72,21 +72,11 @@ class FacebookMessenger:
                                 "title": "버그 신고하기",
                                 "image_url": "https://image.flaticon.com/icons/png/512/875/875220.png",
                                 "subtitle": "아래 버튼을 클릭하면 버그 신고 양식으로 연결됩니다. 감사합니다.",
-                                "default_action": {
-                                    "type": "web_url",
-                                    "url": "https://dust.api.mlsp.kr/support/bugreport?" + str(uuid.uuid4()),
-                                    "messenger_extensions": "false",
-                                    "webview_height_ratio": "tall",
-                                },
                                 "buttons": [
                                     {
                                         "type": "web_url",
-                                        "url": "https://blog.mlsp.kr",
-                                        "title": "View Website"
-                                    }, {
-                                        "type": "postback",
-                                        "title": "Start Chatting",
-                                        "payload": "DEVELOPER_DEFINED_PAYLOAD"
+                                        "url": "https://dust.api.mlsp.kr/support/bugreport?" + str(uuid.uuid4()),
+                                        "title": "신고하러 가기"
                                     }
                                 ]
                             }
