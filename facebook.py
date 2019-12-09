@@ -70,12 +70,12 @@ class FacebookMessenger:
                         "elements": [
                             {
                                 "title": "버그 신고하기",
-                                "image_url": "https://image.flaticon.com/icons/svg/2345/2345599.svg",
+                                "image_url": "https://image.flaticon.com/icons/png/512/875/875220.png",
                                 "subtitle": "아래 버튼을 클릭하면 버그 신고 양식으로 연결됩니다. 감사합니다.",
                                 "default_action": {
                                     "type": "web_url",
-                                    "url": "https://dust.api.mlsp.kr/support/bugreport?" + uuid.uuid4(),
-                                    "messenger_extensions": false,
+                                    "url": "https://dust.api.mlsp.kr/support/bugreport?" + str(uuid.uuid4()),
+                                    "messenger_extensions": "false",
                                     "webview_height_ratio": "tall",
                                 },
                                 "buttons": [
