@@ -7,11 +7,12 @@ All rights reserved.
 for more, please see: https://github.com/HackerJang
 """
 
+import os
+
 from flask import Flask, request, jsonify, redirect
 
-import nlp
-import os
 import key
+import nlp
 from facebook import FacebookMessenger
 
 os.environ['GOOGLE_APPLICATION_CREDENTIALS'] = 'dialogflow_key.json'
@@ -80,14 +81,10 @@ def messenger():
                             # Intent: 미세먼지 데이터 가져오기
                             elif intent == '미세먼지':
                                 # TODO: 미세먼지 API 이용해서 잘 파싱하고 쿼리해서 거기서 Response 받고 잘 처리하기.
-                                user_info = fb.get_user_info(recipient_id)
-
                                 fb.send_text_message('아직 미구현입니다!')
 
                             else:
-                                message = '넹?'
-                                fb.send_text_message(recipient_id, message)
-                                message = '잘 이해를 못하겠어요.'
+                                message = '넹?\n잘 이해를 못하겠어요.'
                                 fb.send_text_message(recipient_id, message)
                                 continue
 
