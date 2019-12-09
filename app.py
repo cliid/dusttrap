@@ -26,9 +26,10 @@ mw_version = 'v1.0a.1000.01.r1'
 def redirect_v1():
     return redirect('/v1.0/')
 
-@app.route('/')
-def personalinfo():
-    
+
+@app.route('/personal_info')
+def personal_info():
+    return render_template("personal_info/index.html")
 
 
 @app.route('/v1.0/')
@@ -120,7 +121,7 @@ def messenger():
                             payload = e['postback']['payload']
 
                             # Payload 값에 따라 분기
-                            if payload == "messaging_postbacks":
+                            if payload == "FACEBOOK_WELCOME":
                                 # <시작하기> 경우
 
                                 # <--- 베타 안내 메시지 시작
