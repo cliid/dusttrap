@@ -1,4 +1,4 @@
-*** Starting uWSGI 2.0.18 (32bit) on [Sun Dec  8 22:07:49 2019] ***
+*** Starting uWSGI 2.0.18 (32bit) on [Mon Dec  9 16:34:24 2019] ***
 compiled with version: 8.3.0 on 16 July 2019 12:06:45
 os: Linux-4.19.86-v7l+ #1283 SMP Fri Nov 29 18:37:40 GMT 2019
 nodename: wiki.mlsp.kr
@@ -19,16 +19,189 @@ uwsgi socket 0 bound to UNIX address /tmp/dusttrap.sock fd 3
 Python version: 3.7.3 (default, Apr  3 2019, 05:39:12)  [GCC 8.2.0]
 Set PythonHome to /home/pi/code/dusttrap/venv
 *** Python threads support is disabled. You can enable it with --enable-threads ***
-Python main interpreter initialized at 0x2104a0
+Python main interpreter initialized at 0x13a32c0
 your server socket listen backlog is limited to 100 connections
 your mercy for graceful operations on workers is 60 seconds
 mapped 64400 bytes (62 KB) for 1 cores
 *** Operational MODE: single process ***
-  File "./app.py", line 110
-    continue
-    ^
-IndentationError: unexpected indent
-unable to load app 0 (mountpoint='') (callable not found or import error)
-*** no app loaded. going in full dynamic mode ***
+WSGI app 0 (mountpoint='') ready in 1 seconds on interpreter 0x13a32c0 pid: 21967 (default app)
 *** uWSGI is running in multiple interpreter mode ***
-spawned uWSGI worker 1 (and the only) (pid: 6035, cores: 1)
+spawned uWSGI worker 1 (and the only) (pid: 21967, cores: 1)
+>> 디버그: Webhook 요청 JSON:
+{'object': 'page', 'entry': [{'id': '102129921278799', 'time': 1575876890952, 'messaging': [{'sender': {'id': '3316525878389637'}, 'recipient': {'id': '102129921278799'}, 'timestamp': 1575876890632, 'message': {'mid': 'm_tBFpy9d-fFh2bNwQSq29LF_rvkU0dnjMqmJaXhMLCFAwdQyrh54EW0s6ANDzFayggeyiEvfBOB4fs4eTPiAlzA', 'text': '안녕!'}}]}]}
+>> 애플리케이션: 3316525878389637 에게 메시지를 보냅니다...
+>> 애플리케이션: 3316525878389637 에게 메시지를 성공적으로 보냈습니다!
+[pid: 21967|app: 0|req: 1/1] 173.252.95.11 () {42 vars in 595 bytes} [Mon Dec  9 16:34:51 2019] POST /v1.0/webhook => generated 21 bytes in 1956 msecs (HTTP/1.1 200) 2 headers in 71 bytes (1 switches on core 0)
+>> 디버그: Webhook 요청 JSON:
+{'object': 'page', 'entry': [{'id': '102129921278799', 'time': 1575876900801, 'messaging': [{'sender': {'id': '3316525878389637'}, 'recipient': {'id': '102129921278799'}, 'timestamp': 1575876900288, 'message': {'mid': 'm_Q7hO9mnrSZ7TJqXAUrH-BV_rvkU0dnjMqmJaXhMLCFCf8X10DewXzmNp25EkHcD9Mt-tmfM1IZ7PValNWKmclw', 'text': '버그 신고할래'}}]}]}
+>> 애플리케이션: 3316525878389637 에게 템플릿을 보냅니다...
+>> 애플리케이션: 3316525878389637 에게 템플릿을 성공적으로 보냈습니다!
+>> 애플리케이션: 3316525878389637 에게 메시지를 보냅니다...
+>> 애플리케이션: 3316525878389637 에게 메시지를 성공적으로 보냈습니다!
+[pid: 21967|app: 0|req: 2/2] 173.252.95.12 () {42 vars in 595 bytes} [Mon Dec  9 16:35:01 2019] POST /v1.0/webhook => generated 21 bytes in 2414 msecs (HTTP/1.1 200) 2 headers in 71 bytes (1 switches on core 0)
+[pid: 21967|app: 0|req: 3/3] 66.220.149.23 () {38 vars in 615 bytes} [Mon Dec  9 16:35:05 2019] GET /support/bugreport?id=86f9ce79-2597-4f46-9654-090a3a90d213 => generated 232 bytes in 2 msecs (HTTP/1.1 404) 2 headers in 72 bytes (1 switches on core 0)
+>> 디버그: Webhook 요청 JSON:
+{'object': 'page', 'entry': [{'id': '102129921278799', 'time': 1575876916423, 'messaging': [{'sender': {'id': '3316525878389637'}, 'recipient': {'id': '102129921278799'}, 'timestamp': 1575876916097, 'message': {'mid': 'm_vtgN-oktgIpjiyCVBWsejF_rvkU0dnjMqmJaXhMLCFDq565mnmzk6jUy7U-ACEuwMU5FBmfJ6IH-tp5PmG1VUQ', 'text': '미세먼지 좀 알려줘 송파구 서울시'}}]}]}
+>> 애플리케이션: 3316525878389637 에게 메시지를 보냅니다...
+>> 애플리케이션: 3316525878389637 에게 메시지를 성공적으로 보냈습니다!
+[pid: 21967|app: 0|req: 4/4] 173.252.95.13 () {42 vars in 595 bytes} [Mon Dec  9 16:35:17 2019] POST /v1.0/webhook => generated 21 bytes in 1616 msecs (HTTP/1.1 200) 2 headers in 71 bytes (1 switches on core 0)
+*** Starting uWSGI 2.0.18 (32bit) on [Mon Dec  9 16:39:30 2019] ***
+compiled with version: 8.3.0 on 16 July 2019 12:06:45
+os: Linux-4.19.86-v7l+ #1283 SMP Fri Nov 29 18:37:40 GMT 2019
+nodename: wiki.mlsp.kr
+machine: armv7l
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 4
+current working directory: /home/pi/code/dusttrap
+detected binary path: /home/pi/code/dusttrap/venv/bin/uwsgi
+chdir() to /home/pi/code/dusttrap
+*** WARNING: you are running uWSGI without its master process manager ***
+your processes number limit is 29184
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to UNIX address /tmp/dusttrap.sock fd 3
+Python version: 3.7.3 (default, Apr  3 2019, 05:39:12)  [GCC 8.2.0]
+Set PythonHome to /home/pi/code/dusttrap/venv
+*** Python threads support is disabled. You can enable it with --enable-threads ***
+Python main interpreter initialized at 0xc6d2c0
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 64400 bytes (62 KB) for 1 cores
+*** Operational MODE: single process ***
+WSGI app 0 (mountpoint='') ready in 1 seconds on interpreter 0xc6d2c0 pid: 22094 (default app)
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI worker 1 (and the only) (pid: 22094, cores: 1)
+>> 디버그: Webhook 요청 JSON:
+{'object': 'page', 'entry': [{'id': '102129921278799', 'time': 1575877189475, 'messaging': [{'sender': {'id': '3316525878389637'}, 'recipient': {'id': '102129921278799'}, 'timestamp': 1575877189128, 'message': {'mid': 'm_O0BYGysCUSroxNWgPn5xnl_rvkU0dnjMqmJaXhMLCFD_jkNurf6PHOm-XJ1-RcSPmITQL_qMh8Z6-AdlVTwQDA', 'text': '섹스'}}]}]}
+>> 애플리케이션: 3316525878389637 에게 메시지를 보냅니다...
+>> 애플리케이션: 3316525878389637 에게 메시지를 성공적으로 보냈습니다!
+[pid: 22094|app: 0|req: 1/1] 173.252.95.22 () {42 vars in 595 bytes} [Mon Dec  9 16:39:50 2019] POST /v1.0/webhook => generated 21 bytes in 1628 msecs (HTTP/1.1 200) 2 headers in 71 bytes (1 switches on core 0)
+>> 디버그: Webhook 요청 JSON:
+{'object': 'page', 'entry': [{'id': '102129921278799', 'time': 1575877198839, 'messaging': [{'sender': {'id': '3316525878389637'}, 'recipient': {'id': '102129921278799'}, 'timestamp': 1575877198586, 'message': {'mid': 'm_drdxP17mD9mklQFQoNiNkV_rvkU0dnjMqmJaXhMLCFDPZMi0f7o5XGCwjyTNYPhbpS7v9q_4MgGCrzXQgY8aMw', 'text': '아아아앙앙'}}]}]}
+>> 애플리케이션: 3316525878389637 에게 메시지를 보냅니다...
+>> 애플리케이션: 3316525878389637 에게 메시지를 성공적으로 보냈습니다!
+>> 애플리케이션: 3316525878389637 에게 메시지를 보냅니다...
+>> 애플리케이션: 3316525878389637 에게 메시지를 성공적으로 보냈습니다!
+[pid: 22094|app: 0|req: 2/2] 173.252.95.12 () {42 vars in 595 bytes} [Mon Dec  9 16:39:59 2019] POST /v1.0/webhook => generated 21 bytes in 1854 msecs (HTTP/1.1 200) 2 headers in 71 bytes (2 switches on core 0)
+>> 디버그: Webhook 요청 JSON:
+{'object': 'page', 'entry': [{'id': '102129921278799', 'time': 1575877204576, 'messaging': [{'sender': {'id': '3316525878389637'}, 'recipient': {'id': '102129921278799'}, 'timestamp': 1575877204153, 'message': {'mid': 'm_j1B4xj0zS-Yo-lSLA52GaV_rvkU0dnjMqmJaXhMLCFDAp6PSTh7WUtuB8ttR1SRJmrM3qA3_2bCVkILyAIkZmQ', 'text': '앙앙앙'}}]}]}
+>> 애플리케이션: 3316525878389637 에게 메시지를 보냅니다...
+>> 애플리케이션: 3316525878389637 에게 메시지를 성공적으로 보냈습니다!
+[pid: 22094|app: 0|req: 3/3] 173.252.95.17 () {42 vars in 595 bytes} [Mon Dec  9 16:40:05 2019] POST /v1.0/webhook => generated 21 bytes in 1695 msecs (HTTP/1.1 200) 2 headers in 71 bytes (1 switches on core 0)
+>> 디버그: Webhook 요청 JSON:
+{'object': 'page', 'entry': [{'id': '102129921278799', 'time': 1575877214963, 'messaging': [{'sender': {'id': '3316525878389637'}, 'recipient': {'id': '102129921278799'}, 'timestamp': 1575877214580, 'message': {'mid': 'm_yednLV9s5HFl7hIyV1_ji1_rvkU0dnjMqmJaXhMLCFCRkOH34FpAt58Yjr8eTTK5IxIzqwAhkKdcFgq7Zypofw', 'text': '쎾쓰'}}]}]}
+>> 애플리케이션: 3316525878389637 에게 메시지를 보냅니다...
+>> 애플리케이션: 3316525878389637 에게 메시지를 성공적으로 보냈습니다!
+>> 애플리케이션: 3316525878389637 에게 메시지를 보냅니다...
+>> 애플리케이션: 3316525878389637 에게 메시지를 성공적으로 보냈습니다!
+[pid: 22094|app: 0|req: 4/4] 173.252.95.24 () {42 vars in 595 bytes} [Mon Dec  9 16:40:15 2019] POST /v1.0/webhook => generated 21 bytes in 2307 msecs (HTTP/1.1 200) 2 headers in 71 bytes (1 switches on core 0)
+>> 디버그: Webhook 요청 JSON:
+{'object': 'page', 'entry': [{'id': '102129921278799', 'time': 1575877304603, 'messaging': [{'sender': {'id': '3316525878389637'}, 'recipient': {'id': '102129921278799'}, 'timestamp': 1575877304266, 'message': {'mid': 'm_OTlPScPJ4NmjXuPpywOgIF_rvkU0dnjMqmJaXhMLCFBgp3JtoeGN7BS-Jioi6K-8Y4gafZhi19j35-qa83ZcqQ', 'text': '안녕'}}]}]}
+>> 애플리케이션: 3316525878389637 에게 메시지를 보냅니다...
+>> 애플리케이션: 3316525878389637 에게 메시지를 성공적으로 보냈습니다!
+[pid: 22094|app: 0|req: 5/5] 173.252.95.2 () {42 vars in 594 bytes} [Mon Dec  9 16:41:45 2019] POST /v1.0/webhook => generated 21 bytes in 1918 msecs (HTTP/1.1 200) 2 headers in 71 bytes (1 switches on core 0)
+[pid: 22094|app: 0|req: 6/6] 180.66.214.172 () {50 vars in 1037 bytes} [Mon Dec  9 16:41:58 2019] GET /support/bugreport?id=86f9ce79-2597-4f46-9654-090a3a90d213 => generated 232 bytes in 2 msecs (HTTP/1.1 404) 2 headers in 72 bytes (1 switches on core 0)
+>> 디버그: Webhook 요청 JSON:
+{'object': 'page', 'entry': [{'id': '102129921278799', 'time': 1575877370742, 'messaging': [{'sender': {'id': '3316525878389637'}, 'recipient': {'id': '102129921278799'}, 'timestamp': 1575877370486, 'message': {'mid': 'm_XcC6d3v2Qrgno_F2nG3LCV_rvkU0dnjMqmJaXhMLCFA9ShrScb6MhzRbIqVw0YvhL_DBlUTDw7HMu2O5nE_3zg', 'text': '쎾쓰'}}]}]}
+>> 애플리케이션: 3316525878389637 에게 메시지를 보냅니다...
+>> 애플리케이션: 3316525878389637 에게 메시지를 성공적으로 보냈습니다!
+>> 애플리케이션: 3316525878389637 에게 메시지를 보냅니다...
+>> 애플리케이션: 3316525878389637 에게 메시지를 성공적으로 보냈습니다!
+[pid: 22094|app: 0|req: 7/7] 173.252.95.22 () {42 vars in 595 bytes} [Mon Dec  9 16:42:51 2019] POST /v1.0/webhook => generated 21 bytes in 1832 msecs (HTTP/1.1 200) 2 headers in 71 bytes (1 switches on core 0)
+>> 디버그: Webhook 요청 JSON:
+{'object': 'page', 'entry': [{'id': '102129921278799', 'time': 1575877406189, 'messaging': [{'sender': {'id': '3316525878389637'}, 'recipient': {'id': '102129921278799'}, 'timestamp': 1575877405938, 'message': {'mid': 'm_PVzHw6EU1xI7wN55XELI71_rvkU0dnjMqmJaXhMLCFAJH4m9EqgXf1PqoCZpYK61ic7vNCoa-Eivpi0gA3rMfQ', 'text': '쎾쓰'}}]}]}
+>> 애플리케이션: 3316525878389637 에게 메시지를 보냅니다...
+>> 애플리케이션: 3316525878389637 에게 메시지를 성공적으로 보냈습니다!
+[pid: 22094|app: 0|req: 8/8] 173.252.95.1 () {42 vars in 594 bytes} [Mon Dec  9 16:43:27 2019] POST /v1.0/webhook => generated 21 bytes in 1506 msecs (HTTP/1.1 200) 2 headers in 71 bytes (1 switches on core 0)
+*** Starting uWSGI 2.0.18 (32bit) on [Mon Dec  9 16:56:27 2019] ***
+compiled with version: 8.3.0 on 16 July 2019 12:06:45
+os: Linux-4.19.86-v7l+ #1283 SMP Fri Nov 29 18:37:40 GMT 2019
+nodename: wiki.mlsp.kr
+machine: armv7l
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 4
+current working directory: /home/pi/code/dusttrap
+detected binary path: /home/pi/code/dusttrap/venv/bin/uwsgi
+chdir() to /home/pi/code/dusttrap
+*** WARNING: you are running uWSGI without its master process manager ***
+your processes number limit is 29184
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to UNIX address /tmp/dusttrap.sock fd 3
+Python version: 3.7.3 (default, Apr  3 2019, 05:39:12)  [GCC 8.2.0]
+Set PythonHome to /home/pi/code/dusttrap/venv
+*** Python threads support is disabled. You can enable it with --enable-threads ***
+Python main interpreter initialized at 0x18e22c0
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 64400 bytes (62 KB) for 1 cores
+*** Operational MODE: single process ***
+WSGI app 0 (mountpoint='') ready in 1 seconds on interpreter 0x18e22c0 pid: 22598 (default app)
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI worker 1 (and the only) (pid: 22598, cores: 1)
+>> 디버그: Webhook 요청 JSON:
+{'object': 'page', 'entry': [{'id': '102129921278799', 'time': 1575878616830, 'messaging': [{'sender': {'id': '3316525878389637'}, 'recipient': {'id': '102129921278799'}, 'timestamp': 1575878616554, 'message': {'mid': 'm_wPy-UIR8MNTnXA8s3_gbiV_rvkU0dnjMqmJaXhMLCFDtCoxjAF5dflIp2_DT8L6h80BRIDVkL8q_G4KQpdqScQ', 'text': '안녕'}}]}]}
+>> 애플리케이션: 3316525878389637 에게 메시지를 보냅니다...
+>> 애플리케이션: 3316525878389637 에게 메시지를 성공적으로 보냈습니다!
+[pid: 22598|app: 0|req: 1/1] 173.252.95.35 () {42 vars in 595 bytes} [Mon Dec  9 17:03:37 2019] POST /v1.0/webhook => generated 21 bytes in 1986 msecs (HTTP/1.1 200) 2 headers in 71 bytes (1 switches on core 0)
+>> 디버그: Webhook 요청 JSON:
+{'object': 'page', 'entry': [{'id': '102129921278799', 'time': 1575882552006, 'messaging': [{'sender': {'id': '3316525878389637'}, 'recipient': {'id': '102129921278799'}, 'timestamp': 1575882551747, 'message': {'mid': 'm_vNyM1Ckfd4ldI1jeVPMW1V_rvkU0dnjMqmJaXhMLCFAkrdBh4Q8qwsgB52MxKALotF3zTcjhrHtDT5Qk5qBmiQ', 'text': '버그 신고할래요'}}]}]}
+>> 애플리케이션: 3316525878389637 에게 템플릿을 보냅니다...
+>> 애플리케이션: 3316525878389637 에게 템플릿을 성공적으로 보냈습니다!
+>> 애플리케이션: 3316525878389637 에게 메시지를 보냅니다...
+>> 애플리케이션: 3316525878389637 에게 메시지를 성공적으로 보냈습니다!
+[pid: 22598|app: 0|req: 2/2] 173.252.95.20 () {42 vars in 595 bytes} [Mon Dec  9 18:09:13 2019] POST /v1.0/webhook => generated 21 bytes in 2319 msecs (HTTP/1.1 200) 2 headers in 71 bytes (1 switches on core 0)
+[pid: 22598|app: 0|req: 3/3] 173.252.95.32 () {38 vars in 615 bytes} [Mon Dec  9 18:09:16 2019] GET /support/bugreport?id=57cbbfb2-952e-4521-af38-e9aee411d69f => generated 232 bytes in 2 msecs (HTTP/1.1 404) 2 headers in 72 bytes (1 switches on core 0)
+[pid: 22598|app: 0|req: 4/4] 180.66.214.172 () {50 vars in 1036 bytes} [Mon Dec  9 18:09:19 2019] GET /support/bugreport?id=57cbbfb2-952e-4521-af38-e9aee411d69f => generated 232 bytes in 1 msecs (HTTP/1.1 404) 2 headers in 72 bytes (1 switches on core 0)
+[pid: 22598|app: 0|req: 5/5] 64.233.172.22 () {40 vars in 726 bytes} [Mon Dec  9 18:20:24 2019] GET /webhook?hub.verify_token=DustTrap_Token => generated 232 bytes in 2 msecs (HTTP/1.1 404) 2 headers in 72 bytes (1 switches on core 0)
+>> 디버그: Webhook 요청 JSON:
+{'object': 'page', 'entry': [{'id': '102129921278799', 'time': 1575884711665, 'messaging': [{'sender': {'id': '3316525878389637'}, 'recipient': {'id': '102129921278799'}, 'timestamp': 1575884711407, 'message': {'mid': 'm_AseIYGPi4Hj9qXI8rS4_D1_rvkU0dnjMqmJaXhMLCFA0ocirci0O0JMAffw_JxkNuVoTTy-BX8yNPr9BPnpfcA', 'text': '앙'}}]}]}
+>> 애플리케이션: 3316525878389637 에게 메시지를 보냅니다...
+>> 애플리케이션: 3316525878389637 에게 메시지를 성공적으로 보냈습니다!
+[pid: 22598|app: 0|req: 6/6] 173.252.95.1 () {42 vars in 594 bytes} [Mon Dec  9 18:45:12 2019] POST /v1.0/webhook => generated 21 bytes in 1675 msecs (HTTP/1.1 200) 2 headers in 71 bytes (1 switches on core 0)
+>> 디버그: Webhook 요청 JSON:
+{'object': 'page', 'entry': [{'id': '102129921278799', 'time': 1575884735859, 'messaging': [{'sender': {'id': '3316525878389637'}, 'recipient': {'id': '102129921278799'}, 'timestamp': 1575884735515, 'message': {'mid': 'm_YBCWBmMR-2KOi6vKN0WQ51_rvkU0dnjMqmJaXhMLCFCcY2GkoPe-BQr2IVwHrd3HwdmdOIXMMOt76SRrlmBnQQ', 'text': '미세먼지 알려줘'}}]}]}
+>> 애플리케이션: 3316525878389637 에게 메시지를 보냅니다...
+>> 애플리케이션: 3316525878389637 에게 메시지를 성공적으로 보냈습니다!
+[pid: 22598|app: 0|req: 7/7] 173.252.95.30 () {42 vars in 595 bytes} [Mon Dec  9 18:45:37 2019] POST /v1.0/webhook => generated 21 bytes in 1884 msecs (HTTP/1.1 200) 2 headers in 71 bytes (1 switches on core 0)
+>> 디버그: Webhook 요청 JSON:
+{'object': 'page', 'entry': [{'id': '102129921278799', 'time': 1575884747106, 'messaging': [{'sender': {'id': '3316525878389637'}, 'recipient': {'id': '102129921278799'}, 'timestamp': 1575884746783, 'message': {'mid': 'm_FsqTVuRZZI96fgYW4F1eZ1_rvkU0dnjMqmJaXhMLCFDQtQ1KoHW7AL4YqB6pyeIOgKNi6tPH3oj-KfO_c2wcUA', 'text': '뭐 할수있어?'}}]}]}
+>> 애플리케이션: 3316525878389637 에게 메시지를 보냅니다...
+>> 애플리케이션: 3316525878389637 에게 메시지를 성공적으로 보냈습니다!
+>> 애플리케이션: 3316525878389637 에게 메시지를 보냅니다...
+>> 애플리케이션: 3316525878389637 에게 메시지를 성공적으로 보냈습니다!
+[pid: 22598|app: 0|req: 8/8] 173.252.95.30 () {42 vars in 595 bytes} [Mon Dec  9 18:45:48 2019] POST /v1.0/webhook => generated 21 bytes in 2169 msecs (HTTP/1.1 200) 2 headers in 71 bytes (1 switches on core 0)
+[pid: 22598|app: 0|req: 9/9] 64.233.172.22 () {40 vars in 615 bytes} [Mon Dec  9 19:41:00 2019] GET /favicon.ico => generated 232 bytes in 3 msecs (HTTP/1.1 404) 2 headers in 72 bytes (1 switches on core 0)
+[pid: 22598|app: 0|req: 10/10] 64.233.172.18 () {40 vars in 727 bytes} [Mon Dec  9 21:03:49 2019] GET /webhook?hub.verify_token=DustTrap_Token => generated 232 bytes in 3 msecs (HTTP/1.1 404) 2 headers in 72 bytes (1 switches on core 0)
+[pid: 22598|app: 0|req: 11/11] 64.233.172.18 () {40 vars in 616 bytes} [Mon Dec  9 21:03:49 2019] GET /favicon.ico => generated 232 bytes in 2 msecs (HTTP/1.1 404) 2 headers in 72 bytes (1 switches on core 0)
+>> 디버그: Webhook 요청 JSON:
+{'object': 'page', 'entry': [{'id': '102129921278799', 'time': 1575897392358, 'messaging': [{'sender': {'id': '3316525878389637'}, 'recipient': {'id': '102129921278799'}, 'timestamp': 1575897392088, 'message': {'mid': 'm_MRS_dv2fHf_RXxm_EFbvbl_rvkU0dnjMqmJaXhMLCFCTO6SCg5S23fTSPrzTZ7rChBRWdtVMb0uTYv7K6Ra42Q', 'text': '오옹ㅇ'}}]}]}
+>> 애플리케이션: 3316525878389637 에게 메시지를 보냅니다...
+>> 애플리케이션: 3316525878389637 에게 메시지를 성공적으로 보냈습니다!
+>> 애플리케이션: 3316525878389637 에게 메시지를 보냅니다...
+>> 애플리케이션: 3316525878389637 에게 메시지를 성공적으로 보냈습니다!
+[pid: 22598|app: 0|req: 12/12] 173.252.95.30 () {42 vars in 595 bytes} [Mon Dec  9 22:16:34 2019] POST /v1.0/webhook => generated 21 bytes in 2099 msecs (HTTP/1.1 200) 2 headers in 71 bytes (1 switches on core 0)
+[pid: 22598|app: 0|req: 13/13] 173.252.95.11 () {38 vars in 503 bytes} [Mon Dec  9 22:29:22 2019] HEAD / => generated 0 bytes in 3 msecs (HTTP/1.1 302) 3 headers in 125 bytes (0 switches on core 0)
+[pid: 22598|app: 0|req: 14/14] 173.252.95.11 () {38 vars in 513 bytes} [Mon Dec  9 22:29:22 2019] HEAD /v1.0/ => generated 0 bytes in 1 msecs (HTTP/1.1 200) 2 headers in 79 bytes (0 switches on core 0)
+[pid: 22598|app: 0|req: 15/15] 173.252.95.47 () {38 vars in 512 bytes} [Mon Dec  9 22:29:32 2019] GET /v1.0/ => generated 16 bytes in 1 msecs (HTTP/1.1 200) 2 headers in 79 bytes (2 switches on core 0)
+[pid: 22598|app: 0|req: 16/16] 180.66.214.172 () {52 vars in 927 bytes} [Mon Dec  9 22:34:53 2019] GET / => generated 219 bytes in 3 msecs (HTTP/1.1 302) 3 headers in 125 bytes (1 switches on core 0)
+[pid: 22598|app: 0|req: 17/17] 180.66.214.172 () {52 vars in 937 bytes} [Mon Dec  9 22:34:53 2019] GET /v1.0/ => generated 16 bytes in 1 msecs (HTTP/1.1 200) 2 headers in 79 bytes (1 switches on core 0)
+[pid: 22598|app: 0|req: 18/18] 110.8.195.53 () {52 vars in 925 bytes} [Mon Dec  9 22:59:36 2019] GET / => generated 219 bytes in 3 msecs (HTTP/1.1 302) 3 headers in 125 bytes (1 switches on core 0)
+[pid: 22598|app: 0|req: 19/19] 110.8.195.53 () {52 vars in 935 bytes} [Mon Dec  9 22:59:36 2019] GET /v1.0/ => generated 16 bytes in 1 msecs (HTTP/1.1 200) 2 headers in 79 bytes (1 switches on core 0)
+[pid: 22598|app: 0|req: 20/20] 110.8.195.53 () {52 vars in 925 bytes} [Mon Dec  9 23:02:51 2019] GET / => generated 219 bytes in 3 msecs (HTTP/1.1 302) 3 headers in 125 bytes (1 switches on core 0)
+[pid: 22598|app: 0|req: 21/21] 110.8.195.53 () {52 vars in 935 bytes} [Mon Dec  9 23:02:51 2019] GET /v1.0/ => generated 16 bytes in 1 msecs (HTTP/1.1 200) 2 headers in 79 bytes (1 switches on core 0)
+[pid: 22598|app: 0|req: 22/22] 110.8.195.53 () {50 vars in 913 bytes} [Mon Dec  9 23:02:55 2019] GET /v1.0/// => generated 16 bytes in 1 msecs (HTTP/1.1 200) 2 headers in 79 bytes (1 switches on core 0)
+[pid: 22598|app: 0|req: 23/23] 110.8.195.53 () {52 vars in 925 bytes} [Mon Dec  9 23:04:23 2019] GET / => generated 219 bytes in 3 msecs (HTTP/1.1 302) 3 headers in 125 bytes (1 switches on core 0)
+[pid: 22598|app: 0|req: 24/24] 110.8.195.53 () {52 vars in 935 bytes} [Mon Dec  9 23:04:23 2019] GET /v1.0/ => generated 16 bytes in 1 msecs (HTTP/1.1 200) 2 headers in 79 bytes (1 switches on core 0)
+[pid: 22598|app: 0|req: 25/25] 110.8.195.53 () {34 vars in 496 bytes} [Mon Dec  9 23:06:21 2019] GET /nmaplowercheck1575900380 => generated 232 bytes in 1 msecs (HTTP/1.1 404) 2 headers in 72 bytes (1 switches on core 0)
+[pid: 22598|app: 0|req: 26/26] 110.8.195.53 () {36 vars in 484 bytes} [Mon Dec  9 23:06:21 2019] POST /sdk => generated 232 bytes in 1 msecs (HTTP/1.1 404) 2 headers in 72 bytes (1 switches on core 0)
+[pid: 22598|app: 0|req: 27/27] 110.8.195.53 () {34 vars in 468 bytes} [Mon Dec  9 23:06:21 2019] GET /evox/about => generated 232 bytes in 1 msecs (HTTP/1.1 404) 2 headers in 72 bytes (1 switches on core 0)
+[pid: 22598|app: 0|req: 28/28] 110.8.195.53 () {34 vars in 458 bytes} [Mon Dec  9 23:06:21 2019] GET /HNAP1 => generated 232 bytes in 0 msecs (HTTP/1.1 404) 2 headers in 72 bytes (1 switches on core 0)
+[pid: 22598|app: 0|req: 29/29] 110.8.195.53 () {30 vars in 326 bytes} [Mon Dec  9 23:06:21 2019] GET / => generated 219 bytes in 1 msecs (HTTP/1.1 302) 3 headers in 125 bytes (1 switches on core 0)
+[pid: 22598|app: 0|req: 30/30] 110.8.195.53 () {48 vars in 900 bytes} [Mon Dec  9 23:06:53 2019] GET /personalinfo => generated 232 bytes in 1 msecs (HTTP/1.1 404) 2 headers in 72 bytes (1 switches on core 0)

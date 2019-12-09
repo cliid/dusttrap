@@ -9,7 +9,7 @@ for more, please see: https://github.com/HackerJang
 
 import os
 
-from flask import Flask, request, jsonify, redirect
+from flask import Flask, request, jsonify, redirect, render_template
 
 import key
 import nlp
@@ -25,6 +25,10 @@ mw_version = 'v1.0a.1000.01.r1'
 @app.route('/')
 def redirect_v1():
     return redirect('/v1.0/')
+
+@app.route('/')
+def personalinfo():
+    
 
 
 @app.route('/v1.0/')
