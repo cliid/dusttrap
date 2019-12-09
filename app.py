@@ -7,11 +7,11 @@ All rights reserved.
 for more, please see: https://github.com/HackerJang
 """
 
-from flask import Flask, request, jsonify, redirect, make_response
-import nlp, key, os
+from flask import Flask, request, jsonify, redirect
 
+import nlp
+import os
 from facebook import FacebookMessenger
-
 
 app = Flask(__name__)
 
