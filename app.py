@@ -11,7 +11,10 @@ from flask import Flask, request, jsonify, redirect
 
 import nlp
 import os
+import key
 from facebook import FacebookMessenger
+
+os.environ['GOOGLE_APPLICATION_CREDENTIALS'] = 'dialogflow_key.json'
 
 app = Flask(__name__)
 
@@ -39,7 +42,6 @@ def messenger():
             return 'Verification Token이 올바르지 않습니다! 토큰 값을 다시 확인하세요.'
 
     if request.method == 'POST':
-
         try:
             req = request.get_json()
             print('>> 디버그: Webhook 요청 JSON:\n%s' % str(req))
@@ -59,8 +61,8 @@ def messenger():
                             # 객체 선언
                             fb = FacebookMessenger()
 
-                            project_id = os.getenv('DIALOGFLOW_PROJECT_ID')
-                            intent = nlp.detect_intent_texts(project_id, "me", request_str, 'ko')
+                            project_id = key.DIALOGFLOW_PROJECT_ID
+                            intent = nlp.detect_intent_texts(project_id, key.SESSION_ID, request_str, key.DLC)
 
                             # Intent: 인사하기
                             if intent == '인사':
@@ -83,7 +85,9 @@ def messenger():
                                 fb.send_text_message('아직 미구현입니다!')
 
                             else:
-                                message = '구현되지 않은 인텐트입니다.'
+                                message = '넹?'
+                                fb.send_text_message(recipient_id, message)
+                                message = '잘 이해를 못하겠어요.'
                                 fb.send_text_message(recipient_id, message)
                                 continue
 
