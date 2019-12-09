@@ -116,7 +116,7 @@ def messenger():
                             payload = e['postback']['payload']
 
                             # Payload 값에 따라 분기
-                            if payload == "FACEBOOK_WELCOME":
+                            if payload == "messaging_postbacks":
                                 # <시작하기> 경우
 
                                 # <--- 베타 안내 메시지 시작
