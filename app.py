@@ -62,7 +62,7 @@ def messenger():
                             fb = FacebookMessenger()
 
                             project_id = key.DIALOGFLOW_PROJECT_ID
-                            intent = nlp.detect_intent_texts(project_id, key.SESSION_ID, request_str, key.DLC)
+                            intent = nlp.return_intent(project_id, key.SESSION_ID, request_str, key.DLC)
 
                             # Intent: 인사하기
                             if intent == '인사':
