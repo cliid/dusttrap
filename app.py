@@ -81,10 +81,12 @@ def messenger():
                             # Intent: 미세먼지 데이터 가져오기
                             elif intent == '미세먼지':
                                 # TODO: 미세먼지 API 이용해서 잘 파싱하고 쿼리해서 거기서 Response 받고 잘 처리하기.
-                                fb.send_text_message('아직 미구현입니다!')
+                                message = '아직 구현이 안됐어요 :)'
 
                             else:
-                                message = '넹?\n잘 이해를 못하겠어요.'
+                                message = '넹?'
+                                fb.send_text_message(recipient_id, message)
+                                message = '무슨 뜻인지 잘 모르겠어요.'
                                 fb.send_text_message(recipient_id, message)
                                 continue
 
