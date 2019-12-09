@@ -75,7 +75,7 @@ class FacebookMessenger:
                                 "buttons": [
                                     {
                                         "type": "web_url",
-                                        "url": "https://dust.api.mlsp.kr/support/bugreport?" + str(uuid.uuid4()),
+                                        "url": "https://dust.api.mlsp.kr/support/bugreport?id=" + str(uuid.uuid4()),
                                         "title": "신고하러 가기"
                                     }
                                 ]
