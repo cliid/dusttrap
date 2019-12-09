@@ -8,17 +8,15 @@ for more, please see: https://github.com/HackerJang
 """
 
 from flask import Flask, request, jsonify, redirect, make_response
-import dialogflow, os
+import nlp, key, os
 
 from facebook import FacebookMessenger
-from google.api_core.exceptions import InvalidArgument
-import key
+
 
 app = Flask(__name__)
 
 mw_version = 'v1.0a.1000.01.r1'
 
-os.environ["GOOGLE_APPLICATION_CREDENTIALS"] = '39ddbb18e1794fdf945468c7e71a059d'
 
 @app.route('/')
 def redirect_v1():
@@ -60,16 +58,9 @@ def messenger():
 
                             # 객체 선언
                             fb = FacebookMessenger()
-                            session_client = dialogflow.SessionsClient()
-                            session = session_client.session_path(key.DIALOGFLOW_PROJECT_ID, key.SESSION_ID)
-                            text_input = dialogflow.types.TextInput(text=request_str, language_code=key.DIALOGFLOW_LANGUAGE_CODE)
-                            query_input = dialogflow.types.QueryInput(text=text_input)
 
-                            try:
-                                response = session_client.detect_intent(session=session, query_input=query_input)
-                                intent = response.query_result.intent.display_name
-                            except InvalidArgument:
-                                raise Exception('Something Strange Happened')
+                            project_id = os.getenv('DIALOGFLOW_PROJECT_ID')
+                            intent = nlp.detect_intent_texts(project_id, "me", request_str, 'ko')
 
                             # Intent: 인사하기
                             if intent == '인사':
