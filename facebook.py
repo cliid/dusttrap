@@ -1,5 +1,7 @@
-import requests
 import json
+
+import requests
+import uuid
 
 from key import ACCESS_TOKEN
 
@@ -9,7 +11,7 @@ class FacebookMessenger:
 
     def send_text_message(self, recipient_id, string):
         request_url = self.GRAPH_URL + ACCESS_TOKEN
-        headers = {'content-type':  'application/json'}
+        headers = {'content-type': 'application/json'}
         parameters = {
             "recipient": {
                 "id": recipient_id
@@ -52,6 +54,56 @@ class FacebookMessenger:
     def send_message(self, recipient_id, string):
         # Is an alias of send_text_message()
         return self.send_text_message(recipient_id, string)
+
+    def send_bug(self, recipient_id):
+        request_url = self.GRAPH_URL + ACCESS_TOKEN
+        headers = {'content-type': 'application/json'}
+        parameters = {
+            "recipient": {
+                "id": recipient_id
+            },
+            "message": {
+                "attachment": {
+                    "type": "template",
+                    "payload": {
+                        "template_type": "generic",
+                        "elements": [
+                            {
+                                "title": "버그 신고하기",
+                                "image_url": "https://image.flaticon.com/icons/svg/2345/2345599.svg",
+                                "subtitle": "아래 버튼을 클릭하면 버그 신고 양식으로 연결됩니다. 감사합니다.",
+                                "default_action": {
+                                    "type": "web_url",
+                                    "url": "https://dust.api.mlsp.kr/support/bugreport?" + uuid.uuid4(),
+                                    "messenger_extensions": false,
+                                    "webview_height_ratio": "tall",
+                                },
+                                "buttons": [
+                                    {
+                                        "type": "web_url",
+                                        "url": "https://blog.mlsp.kr",
+                                        "title": "View Website"
+                                    }, {
+                                        "type": "postback",
+                                        "title": "Start Chatting",
+                                        "payload": "DEVELOPER_DEFINED_PAYLOAD"
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                }
+            }
+        }
+        print('>> 애플리케이션: %s 에게 템플릿을 보냅니다...' % recipient_id)
+        response = requests.post(request_url, data=json.dumps(parameters), headers=headers)
+
+        if response.status_code == 200:
+            print('>> 애플리케이션: %s 에게 템플릿을 성공적으로 보냈습니다!' % recipient_id)
+
+            return {
+                "result": "success"
+            }
 
     @staticmethod
     def get_user_info(user_id):

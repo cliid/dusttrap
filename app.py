@@ -83,6 +83,10 @@ def messenger():
                                 # TODO: 미세먼지 API 이용해서 잘 파싱하고 쿼리해서 거기서 Response 받고 잘 처리하기.
                                 message = '아직 구현이 안됐어요 :)'
 
+                            elif intent == '버그':
+                                message = '아래 버튼을 눌러서 신고해주세요!'
+                                fb.send_bug(recipient_id, )
+
                             else:
                                 message = '넹?'
                                 fb.send_text_message(recipient_id, message)

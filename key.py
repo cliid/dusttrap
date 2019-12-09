@@ -8,4 +8,4 @@ DIALOGFLOW_PROJECT_ID = "dusttrap-qoacwk"
 
 DLC = 'ko'
 
-SESSION_ID = 'me'
+SESSION_ID = 'dusttrap_session'
