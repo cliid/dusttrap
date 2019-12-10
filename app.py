@@ -122,20 +122,16 @@ def messenger():
 
                             # Payload 값에 따라 분기
                             if payload == "FACEBOOK_WELCOME":
-                                # <시작하기> 경우
+                                # <시작하기> or <Get Started> 경우
 
-                                # <--- 베타 안내 메시지 시작
+                                # <--- 인사/안내 시작
 
                                 # 사용자 정보 가져오기
                                 fb = FacebookMessenger()
                                 user_info = fb.get_user_info(recipient_id)
 
                                 if user_info['result'] == 'success':
-                                    message = '안녕하세요, %s%s 님, 처음 만나서 반가워요! 저는 미세봇™ 입니다.' \
-                                              '베타라서 일부 기능이 제대로 작동하지 않을 수 있어요.\n' \
-                                              '만약 버그를 발견했을 때에는, 저를 만든 분(https://m.me/hackerjang) 에게 ' \
-                                              '페메로 스크린샷과 함께 제보해 주시면 정말 감사하겠습니다.\n좋은 하루 보내세요!' \
-                                              '' % (user_info['data']['last_name'], user_info['data']['first_name'])
+                                    fb.send_quick_reply_start(recipient_id)
                                     # TODO: 도움말
                                 else:
                                     if user_info['code'] == 'FB_PAGE':
