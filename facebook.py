@@ -109,7 +109,7 @@ class FacebookMessenger:
                     {
                         "content_type": "text",
                         "title": "만나서 반가워!",
-                        "payload": "NICE_TO_MEET_YOU"
+                        "payload": "FACEBOOK_WELCOME"
                     }
                 ]
             }
