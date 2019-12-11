@@ -89,8 +89,9 @@ def messenger():
                                 message = '아직 구현이 안됐어요 :)'
 
                             elif intent == '버그':
-                                message = '위의 버튼을 눌러서 신고해주세요!'
                                 fb.send_bug(recipient_id)
+                                fb.send_text_message(recipient_id, '아래 버튼을 눌러서 신고해주세요!')
+                                continue
 
                             elif intent == '웃김':
                                 message = 'ㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋ'
