@@ -9,7 +9,7 @@ for more, please see: https://github.com/HackerJang
 
 import os
 
-from flask import Flask, request, jsonify, redirect, render_template
+from flask import Flask, request, jsonify, redirect
 
 import key
 import nlp
@@ -17,7 +17,7 @@ from facebook import FacebookMessenger
 
 os.environ['GOOGLE_APPLICATION_CREDENTIALS'] = 'dialogflow_key.json'
 
-app = Flask(__name__)
+app = Flask(__name__, static_url_path='')
 
 mw_version = 'v1.0a.1000.01.r1'
 
@@ -25,11 +25,6 @@ mw_version = 'v1.0a.1000.01.r1'
 @app.route('/')
 def redirect_v1():
     return redirect('/v1.0/')
-
-
-@app.route('/personal_info')
-def personal_info():
-    return render_template("personal_info/index.html")
 
 
 @app.route('/v1.0/')
@@ -87,6 +82,7 @@ def messenger():
                             elif intent == '미세먼지':
                                 # TODO: 미세먼지 API 이용해서 잘 파싱하고 쿼리해서 거기서 Response 받고 잘 처리하기.
                                 message = '아직 구현이 안됐어요 :)'
+
 
                             elif intent == '버그':
                                 fb.send_text_message(recipient_id, '아래 버튼을 눌러서 신고해주세요!')

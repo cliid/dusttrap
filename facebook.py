@@ -124,6 +124,45 @@ class FacebookMessenger:
                 "result": "success"
             }
 
+    def send_quick_reply_(self, recipient_id):
+        request_url = self.GRAPH_URL + ACCESS_TOKEN
+        headers = {'content-type': 'application/json'}
+        parameters = {
+            "recipient": {
+                "id": recipient_id
+            },
+            "messaging_type": "RESPONSE",
+            "message": {
+                "text": "처음 만나서 반가워요! 저는 앞으로 당신의 소중한 호흡기를 지켜드릴 미세봇이라고 해요!😉",
+                "quick_replies": [
+                    {
+                        "content_type": "text",
+                        "title": "만나서 반가워!",
+                        "payload": "FACEBOOK_WELCOME"
+                    },
+                    {
+                        "content_type": "text",
+                        "title": "좀 더 알려줘!",
+                        "payload": "FACEBOOK_WELCOME"
+                    },
+                    {
+                        "content_type": "text",
+                        "title": "🚨 버그 신고하기",
+                        "payload": "FACEBOOK_WELCOME"
+                    }
+                ]
+            }
+        }
+        print('>> 애플리케이션: %s 에게 "Quick Reply: Start"을 보냅니다...' % recipient_id)
+        response = requests.post(request_url, data=json.dumps(parameters), headers=headers)
+
+        if response.status_code == 200:
+            print('>> 애플리케이션: %s 에게 "Quick Reply: Start"를 성공적으로 보냈습니다!' % recipient_id)
+
+            return {
+                "result": "success"
+            }
+
     def get_started(self, recipient_id):
         request_url = self.GRAPH_URL + ACCESS_TOKEN
         headers = {'content-type': 'application/json'}
