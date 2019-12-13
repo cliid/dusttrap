@@ -82,8 +82,9 @@ def messenger():
 
                             # Intent: 미세먼지 데이터 가져오기
                             elif intent == '미세먼지':
-                                message = '송파구의 미세먼지는 다음과 같습니다.'
-                                dt.today_dust_request(recipient_id, "송파구")
+                                gu = '강남구'
+                                message = gu + '의 미세먼지는 다음과 같습니다.'
+                                dt.today_dust_request(recipient_id, gu)
 
                             elif intent == '버그':
                                 fb.send_text_message(recipient_id, '아래 버튼을 눌러서 신고해주세요!')
