@@ -14,6 +14,7 @@ from flask import Flask, request, jsonify, redirect
 import key
 import nlp
 from facebook import FacebookMessenger
+from finedust import FineDustRequest
 
 os.environ['GOOGLE_APPLICATION_CREDENTIALS'] = 'dialogflow_key.json'
 
@@ -61,6 +62,7 @@ def messenger():
 
                             # 객체 선언
                             fb = FacebookMessenger()
+                            dt = FineDustRequest()
 
                             project_id = key.DIALOGFLOW_PROJECT_ID
                             intent = nlp.return_intent(project_id, key.SESSION_ID, request_str, key.DLC)
@@ -80,9 +82,7 @@ def messenger():
 
                             # Intent: 미세먼지 데이터 가져오기
                             elif intent == '미세먼지':
-                                # TODO: 미세먼지 API 이용해서 잘 파싱하고 쿼리해서 거기서 Response 받고 잘 처리하기.
-                                message = '아직 구현이 안됐어요 :)'
-
+                                dt.JusoReqURL(recipient_id, "송파구")
 
                             elif intent == '버그':
                                 fb.send_text_message(recipient_id, '아래 버튼을 눌러서 신고해주세요!')
@@ -159,6 +159,7 @@ def messenger():
             return {
                 "result": "error"
             }
+
 
 class InvalidUsage(Exception):
     # 오류를 처리하기 위한 클래스: InvalidUsage(message, status_code=None, payload=None) 로 사용하세요.

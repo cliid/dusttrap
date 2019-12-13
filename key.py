@@ -9,3 +9,5 @@ DIALOGFLOW_PROJECT_ID = "dusttrap-qoacwk"
 DLC = 'ko'
 
 SESSION_ID = 'dusttrap_session'
+
+OPENAPI_SERVICE_KEY = "n9ncCn2UecqURdAD62GyviK7CrTlgyCWz7QapI49OZS3sma05WTl5k1whigvxcA0nwMdHyUpGhwSz2O0qBnseA%3D%3D"

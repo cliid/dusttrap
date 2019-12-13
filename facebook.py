@@ -94,7 +94,7 @@ class FacebookMessenger:
             return {
                 "result": "success"
             }
-            
+
     def send_quick_reply_start(self, recipient_id):
         request_url = self.GRAPH_URL + ACCESS_TOKEN
         headers = {'content-type': 'application/json'}
