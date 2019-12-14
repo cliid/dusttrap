@@ -109,8 +109,18 @@ class FacebookMessenger:
                 "quick_replies": [
                     {
                         "content_type": "text",
-                        "title": "만나서 반가워!",
+                        "title": "만나서 반가워 🤗",
                         "payload": "FACEBOOK_WELCOME"
+                    },
+                    {
+                        "content_type": "text",
+                        "title": "더 알아볼래!",
+                        "payload": "KNOW_MORE"
+                    },
+                    {
+                        "content_type": "text",
+                        "title": "🚨 버그 신고하기",
+                        "payload": "BUG_REPORT"
                     }
                 ]
             }
@@ -148,6 +158,35 @@ class FacebookMessenger:
 
         if response.status_code == 200:
             print('>> 애플리케이션: %s 에게 "Quick Reply: Fine Dust"를 성공적으로 보냈습니다!' % recipient_id)
+
+            return {
+                "result": "success"
+            }
+
+    def qr_know_more(self, recipient_id):
+        request_url = self.GRAPH_URL + ACCESS_TOKEN
+        headers = {'content-type': 'application/json'}
+        parameters = {
+            "recipient": {
+                "id": recipient_id
+            },
+            "messaging_type": "RESPONSE",
+            "message": {
+                "text": "미세봇™ 은 @HackerJang(장지우)가 만든 미세먼지 실시간 확인 페메봇입니다! 🧐",
+                "quick_replies": [
+                    {
+                        "content_type": "text",
+                        "title": "🚨 버그 신고하기",
+                        "payload": "BUG_REPORT"
+                    }
+                ]
+            }
+        }
+        print('>> 애플리케이션: %s 에게 "Quick Reply: Know More" 보냅니다...' % recipient_id)
+        response = requests.post(request_url, data=json.dumps(parameters), headers=headers)
+
+        if response.status_code == 200:
+            print('>> 애플리케이션: %s 에게 "Quick Reply: Know More"를 성공적으로 보냈습니다!' % recipient_id)
 
             return {
                 "result": "success"

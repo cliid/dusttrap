@@ -138,7 +138,6 @@ def messenger():
                                 if user_info['result'] == 'success':
                                     fb.qr_start(recipient_id)
                                     continue
-                                    # TODO: 도움말
                                 else:
                                     if user_info['code'] == 'FB_PAGE':
                                         fb.qr_start(recipient_id)
@@ -147,6 +146,7 @@ def messenger():
                                         message = user_info['error']
                                         fb.send_text_message(recipient_id, message)
                                         continue
+
                             elif payload == "BUG_REPORT":
                                 # <버그 신고하기> 경우
 
@@ -156,7 +156,6 @@ def messenger():
 
                                 if user_info['result'] == 'success':
                                     fb.send_bug(recipient_id)
-                                    # TODO: 도움말
                                 else:
                                     if user_info['code'] == 'FB_PAGE':
                                         fb.send_bug(recipient_id)
@@ -166,7 +165,23 @@ def messenger():
                                         fb.send_text_message(recipient_id, message)
                                         continue
 
-                                # 베타 안내 메시지 끝! --->
+                            elif payload == "KNOW_MORE":
+                                # <더 알아볼래!> 경우
+
+                                # 사용자 정보 가져오기
+                                fb = FacebookMessenger()
+                                user_info = fb.get_user_info(recipient_id)
+
+                                if user_info['result'] == 'success':
+                                    fb.send_bug(recipient_id)
+                                else:
+                                    if user_info['code'] == 'FB_PAGE':
+                                        fb.send_bug(recipient_id)
+
+                                    else:
+                                        message = user_info['error']
+                                        fb.send_text_message(recipient_id, message)
+                                        continue
                         else:
                             pass
             return {
