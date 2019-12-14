@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 ACCESS_TOKEN = "EAAFZCCl3qsvMBADOEgz0BJjfmZBYfMwk7jAJ57uUGiRi3uZCzC1hHjqWkXeaAOA5CZCsz0H7WnPmCfrVZALzGmPtpgpZBdZBEpiR" \
                "OONAWZBw1Tr0foN1f07JA5TzodKXXnVwsxLbg2KUwRiSUkJq35g4JuRTxdQAbVw7ZCRSDKTzmbYlDsZAgfdZBpwXtg2XMwCKOsZD"
 

@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 def dequote(s):
     """
     If a string has single or double quotes around it, remove them.

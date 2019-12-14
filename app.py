@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 """
 DUSTTRAP™ Server v1
 
@@ -84,7 +85,7 @@ def messenger():
                             # Intent: 미세먼지 데이터 가져오기
                             elif intent == '미세먼지':
                                 message = "<지금 미세먼지 보기>"
-                                gu = nlp.return_gu(request_str, key.DLC)
+                                gu = nlp.return_gu(project_id, key.SESSION_ID, request_str, key.DLC)
                                 dt.today_dust_request(recipient_id, gu)
 
                             elif intent == '버그':
