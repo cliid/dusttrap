@@ -87,10 +87,11 @@ def messenger():
                                 try:
                                     gu = nlp.return_gu(project_id, key.SESSION_ID, request_str, key.DLC)
                                     dt.today_dust_request(recipient_id, gu)
+                                    fb.qr_fine_dust(recipient_id)
                                 except:
                                     fb.send_message(recipient_id, '죄송하지만 요청하신 구의 미세먼지 측정소가 없습니다.\n'
                                                                   '시/군/구의 이름으로 다시 시도해주시면 감사하겠습니다. :)')
-                                fb.qr_fine_dust(recipient_id)
+                                    fb.qr_fine_dust(recipient_id)
                                 continue
 
                             elif intent == '버그':
