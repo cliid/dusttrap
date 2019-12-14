@@ -128,9 +128,28 @@ def messenger():
 
                             # Payload 값에 따라 분기
                             if payload == "FACEBOOK_WELCOME":
-                                # <시작하기> or <Get Started> 경우
+                                # <시작하기> 경우
 
-                                # <--- 인사/안내 시작
+                                # 사용자 정보 가져오기
+                                fb = FacebookMessenger()
+                                user_info = fb.get_user_info(recipient_id)
+
+                                if user_info['result'] == 'success':
+                                    fb.qr_start(recipient_id)
+                                    # TODO: 도움말
+                                else:
+                                    if user_info['code'] == 'FB_PAGE':
+                                        fb.qr_start(recipient_id)
+
+                                    else:
+                                        message = user_info['error']
+                                        fb.send_text_message(recipient_id, message)
+                                        continue
+
+                                fb.send_text_message(recipient_id, message)
+                                continue
+                            elif payload == "BUG_REPORT":
+                                # <버그 신고하기> 경우
 
                                 # 사용자 정보 가져오기
                                 fb = FacebookMessenger()
@@ -151,8 +170,8 @@ def messenger():
                                         fb.send_text_message(recipient_id, message)
                                         continue
 
-                                fb.send_text_message(recipient_id, message)
-                                continue
+                                    fb.send_text_message(recipient_id, message)
+                                    continue
 
                                 # 베타 안내 메시지 끝! --->
                         else:
