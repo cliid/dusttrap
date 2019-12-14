@@ -12,9 +12,9 @@ import os
 from flask import Flask, request, jsonify, redirect
 
 import key
-import nlp
 from facebook import FacebookMessenger
 from finedust import FineDustRequest
+from nlp import NaturalLanguageProcessing
 
 os.environ['GOOGLE_APPLICATION_CREDENTIALS'] = 'dialogflow_key.json'
 
@@ -63,6 +63,7 @@ def messenger():
                             # 객체 선언
                             fb = FacebookMessenger()
                             dt = FineDustRequest()
+                            nlp = NaturalLanguageProcessing()
 
                             project_id = key.DIALOGFLOW_PROJECT_ID
                             intent = nlp.return_intent(project_id, key.SESSION_ID, request_str, key.DLC)
@@ -82,8 +83,8 @@ def messenger():
 
                             # Intent: 미세먼지 데이터 가져오기
                             elif intent == '미세먼지':
-                                gu = nlp.return_gu(project_id, key.SESSION_ID, request_str, key.DLC)
-                                message = gu + '의 미세먼지는 다음과 같습니다.'
+                                message = "<지금 미세먼지 보기>"
+                                gu = nlp.return_gu(request_str, key.DLC)
                                 dt.today_dust_request(recipient_id, gu)
 
                             elif intent == '버그':
