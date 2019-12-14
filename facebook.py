@@ -138,7 +138,7 @@ class FacebookMessenger:
                     {
                         "content_type": "text",
                         "title": "🚨 버그 신고하기",
-                        "payload": "REPORT_BUG"
+                        "payload": "BUG_REPORT"
                     }
                 ]
             }
