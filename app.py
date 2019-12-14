@@ -147,6 +147,23 @@ def messenger():
                                         fb.send_text_message(recipient_id, message)
                                         continue
 
+                            elif payload == "NICE_TO_MEET_YOU":
+                                # <만나서 반가워!> 경우
+
+                                # 사용자 정보 가져오기
+                                fb = FacebookMessenger()
+                                user_info = fb.get_user_info(recipient_id)
+
+                                if user_info['result'] == 'success':
+                                    fb.qr_default(recipient_id)
+                                else:
+                                    if user_info['code'] == 'FB_PAGE':
+                                        fb.qr_default(recipient_id)
+                                    else:
+                                        message = user_info['error']
+                                        fb.send_text_message(recipient_id, message)
+                                        continue
+
                             elif payload == "BUG_REPORT":
                                 # <버그 신고하기> 경우
 
@@ -156,10 +173,11 @@ def messenger():
 
                                 if user_info['result'] == 'success':
                                     fb.send_bug(recipient_id)
+                                    fb.qr_default(recipient_id)
                                 else:
                                     if user_info['code'] == 'FB_PAGE':
                                         fb.send_bug(recipient_id)
-
+                                        fb.qr_default(recipient_id)
                                     else:
                                         message = user_info['error']
                                         fb.send_text_message(recipient_id, message)
@@ -173,11 +191,48 @@ def messenger():
                                 user_info = fb.get_user_info(recipient_id)
 
                                 if user_info['result'] == 'success':
-                                    fb.send_bug(recipient_id)
+                                    fb.send_message(recipient_id, '미세봇™ 은 @HackerJang(장지우)가 만든 '
+                                                                  '미세먼지 실시간 확인 페메봇입니다! 🧐')
+                                    fb.qr_know_more(recipient_id)
                                 else:
                                     if user_info['code'] == 'FB_PAGE':
-                                        fb.send_bug(recipient_id)
+                                        fb.send_message(recipient_id, '미세봇™ 은 @HackerJang(장지우)가 만든 '
+                                                                      '미세먼지 실시간 확인 페메봇입니다! 🧐')
+                                        fb.qr_know_more(recipient_id)
+                                    else:
+                                        message = user_info['error']
+                                        fb.send_text_message(recipient_id, message)
+                                        continue
 
+                            elif payload == "LOOK_SOURCE":
+                                # <소스코드 볼래!> 경우
+
+                                # 사용자 정보 가져오기
+                                fb = FacebookMessenger()
+                                user_info = fb.get_user_info(recipient_id)
+
+                                if user_info['result'] == 'success':
+                                    fb.send_source_code(recipient_id)
+                                    fb.qr_default(recipient_id)
+                                else:
+                                    if user_info['code'] == 'FB_PAGE':
+                                        fb.send_source_code(recipient_id)
+                                        fb.qr_default(recipient_id)
+                                    else:
+                                        message = user_info['error']
+                                        fb.send_text_message(recipient_id, message)
+                                        continue
+                            else:
+                                # <위를 제외한 모든 경우>
+
+                                fb = FacebookMessenger()
+                                user_info = fb.get_user_info(recipient_id)
+
+                                if user_info['result'] == 'success':
+                                    fb.qr_default(recipient_id)
+                                else:
+                                    if user_info['code'] == 'FB_PAGE':
+                                        fb.qr_default(recipient_id)
                                     else:
                                         message = user_info['error']
                                         fb.send_text_message(recipient_id, message)

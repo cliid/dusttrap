@@ -96,6 +96,49 @@ class FacebookMessenger:
                 "result": "success"
             }
 
+    def send_source_code(self, recipient_id):
+        request_url = self.GRAPH_URL + ACCESS_TOKEN
+        headers = {'content-type': 'application/json'}
+        parameters = {
+            "recipient": {
+                "id": recipient_id
+            },
+            "message": {
+                "attachment": {
+                    "type": "template",
+                    "payload": {
+                        "template_type": "generic",
+                        "elements": [
+                            {
+                                "title": "소스 코드",
+                                "image_url": "https://icon-library.net/images/github-svg-icon/github-svg-icon-18.jpg",
+                                "subtitle": "미세봇™ 의 소스코드입니다. 현재는 보안 문제로 소스코드가 비공개화 된 점 양해 부탁드립니다.\n"
+                                            "소스코드가 보고 싶으신 분들은 "
+                                            "'anonymous.whoru.human@gmail.com'\n"
+                                            "으로 연락 주시면 최대한 빠르게 답변 드리도록 하겠습니다!",
+                                "buttons": [
+                                    {
+                                        "type": "web_url",
+                                        "url": "https://github.com/HackerJang",
+                                        "title": "DustTrap™ API Source"
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                }
+            }
+        }
+        print('>> 애플리케이션: %s 에게 소스코드 보냅니다...' % recipient_id)
+        response = requests.post(request_url, data=json.dumps(parameters), headers=headers)
+
+        if response.status_code == 200:
+            print('>> 애플리케이션: %s 에게 소스코드를 성공적으로 보냈습니다!' % recipient_id)
+
+            return {
+                "result": "success"
+            }
+
     def qr_start(self, recipient_id):
         request_url = self.GRAPH_URL + ACCESS_TOKEN
         headers = {'content-type': 'application/json'}
@@ -105,12 +148,12 @@ class FacebookMessenger:
             },
             "messaging_type": "RESPONSE",
             "message": {
-                "text": "처음 만나서 반가워요! 저는 앞으로 당신의 소중한 호흡기를 지켜드릴 미세봇이라고 해요! 😇",
+                "text": "처음 만나서 반가워요! 저는 앞으로 당신의 소중한 건강을 지켜드릴 미세봇이라고 해요! 😇",
                 "quick_replies": [
                     {
                         "content_type": "text",
                         "title": "만나서 반가워 🤗",
-                        "payload": "FACEBOOK_WELCOME"
+                        "payload": "NICE_TO_MEET_YOU"
                     },
                     {
                         "content_type": "text",
@@ -172,8 +215,12 @@ class FacebookMessenger:
             },
             "messaging_type": "RESPONSE",
             "message": {
-                "text": "미세봇™ 은 @HackerJang(장지우)가 만든 미세먼지 실시간 확인 페메봇입니다! 🧐",
                 "quick_replies": [
+                    {
+                        "content_type": "text",
+                        "title": "누가 만들었어?",
+                        "payload": "WHO_MADE_IT"
+                    },
                     {
                         "content_type": "text",
                         "title": "🚨 버그 신고하기",
@@ -187,6 +234,44 @@ class FacebookMessenger:
 
         if response.status_code == 200:
             print('>> 애플리케이션: %s 에게 "Quick Reply: Know More"를 성공적으로 보냈습니다!' % recipient_id)
+
+            return {
+                "result": "success"
+            }
+
+    def qr_default(self, recipient_id):
+        request_url = self.GRAPH_URL + ACCESS_TOKEN
+        headers = {'content-type': 'application/json'}
+        parameters = {
+            "recipient": {
+                "id": recipient_id
+            },
+            "messaging_type": "RESPONSE",
+            "message": {
+                "quick_replies": [
+                    {
+                        "content_type": "text",
+                        "title": "📁 소스 코드 보기",
+                        "payload": "LOOK_SOURCE"
+                    },
+                    {
+                        "content_type": "text",
+                        "title": "✏️ 팁!",
+                        "payload": "USAGE_TIP"
+                    },
+                    {
+                        "content_type": "text",
+                        "title": "🚨 버그 신고하기",
+                        "payload": "BUG_REPORT"
+                    }
+                ]
+            }
+        }
+        print('>> 애플리케이션: %s 에게 "Quick Reply: Default" 보냅니다...' % recipient_id)
+        response = requests.post(request_url, data=json.dumps(parameters), headers=headers)
+
+        if response.status_code == 200:
+            print('>> 애플리케이션: %s 에게 "Quick Reply: Default"를 성공적으로 보냈습니다!' % recipient_id)
 
             return {
                 "result": "success"
