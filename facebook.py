@@ -105,7 +105,7 @@ class FacebookMessenger:
             },
             "messaging_type": "RESPONSE",
             "message": {
-                "text": "처음 만나서 반가워요! 저는 앞으로 당신의 소중한 호흡기를 지켜드릴 미세봇이라고 해요!😉",
+                "text": "처음 만나서 반가워요! 저는 앞으로 당신의 소중한 호흡기를 지켜드릴 미세봇이라고 해요! 😇",
                 "quick_replies": [
                     {
                         "content_type": "text",

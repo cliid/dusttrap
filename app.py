@@ -136,18 +136,16 @@ def messenger():
 
                                 if user_info['result'] == 'success':
                                     fb.qr_start(recipient_id)
+                                    continue
                                     # TODO: 도움말
                                 else:
                                     if user_info['code'] == 'FB_PAGE':
                                         fb.qr_start(recipient_id)
-
+                                        continue
                                     else:
                                         message = user_info['error']
                                         fb.send_text_message(recipient_id, message)
                                         continue
-
-                                fb.send_text_message(recipient_id, message)
-                                continue
                             elif payload == "BUG_REPORT":
                                 # <버그 신고하기> 경우
 
@@ -156,22 +154,16 @@ def messenger():
                                 user_info = fb.get_user_info(recipient_id)
 
                                 if user_info['result'] == 'success':
-                                    fb.qr_start(recipient_id)
+                                    fb.send_bug(recipient_id)
                                     # TODO: 도움말
                                 else:
                                     if user_info['code'] == 'FB_PAGE':
-                                        message = '안녕하세요, 처음 만나서 반가워요! 저는 미세봇™ 입니다.' \
-                                                  '베타라서 일부 기능이 제대로 작동하지 않을 수 있어요.\n' \
-                                                  '만약 버그를 발견했을 때에는, 저를 만든 분(https://m.me/hackerjang) 에게 ' \
-                                                  '페메로 스크린샷과 함께 제보해 주시면 정말 감사하겠습니다.\n좋은 하루 보내세요!'
+                                        fb.send_bug(recipient_id)
 
                                     else:
                                         message = user_info['error']
                                         fb.send_text_message(recipient_id, message)
                                         continue
-
-                                    fb.send_text_message(recipient_id, message)
-                                    continue
 
                                 # 베타 안내 메시지 끝! --->
                         else:
