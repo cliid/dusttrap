@@ -37,7 +37,6 @@ class NaturalLanguageProcessing:
         }
         print('>>>>> NLP return_gu() function working now...')
         response = requests.post(request_url, data=json.dumps(parameters), headers=headers)
-        print(response.json())
         sel_gu = response.json()['queryResult']['parameters']['selected_gu']
 
         return sel_gu
