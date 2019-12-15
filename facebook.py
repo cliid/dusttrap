@@ -71,7 +71,7 @@ class FacebookMessenger:
                         "elements": [
                             {
                                 "title": "버그 신고하기",
-                                "image_url": "https://image.flaticon.com/icons/png/512/875/875220.png",
+                                "image_url": "https://dust.api.mlsp.kr/images/BugReport.png",
                                 "subtitle": "아래 버튼을 클릭하면 버그 신고 양식으로 연결됩니다. 감사합니다.",
                                 "buttons": [
                                     {
@@ -111,10 +111,7 @@ class FacebookMessenger:
                         "elements": [
                             {
                                 "title": "미세먼지 불러오기",
-                                "image_url": "https://static.wixstatic.com/media/ab8bd5_c465b19bcb894"
-                                             "d6ba5ab646e8d2cf7dc~mv2.jpg/v1/crop/x_0,y_0,w_1279,h_774/fil"
-                                             "l/w_1279,h_774,al_c,q_85/%EB%AF%B8%EC%84%B8%EB%A8%BC%EC%A7%80-%E"
-                                             "B%B9%84%EA%B5%90-%EC%82%AC%EC%A7%84.webp",
+                                "image_url": "https://dust.api.mlsp.kr/images/FineDust.png",
                                 "subtitle": "전국의 미세먼지 데이터를 눈 깜빡할 사이에 불러올 수 있어요.",
                                 "buttons": [
                                     {
@@ -126,8 +123,7 @@ class FacebookMessenger:
                             },
                             {
                                 "title": "가상의 여자친구",
-                                "image_url": "https://66.media.tumblr.com/6c40286d3407e2f"
-                                             "f6ee4dc93e131aaec/tumblr_pjh3nz4weK1tap7mi_1280.png",
+                                "image_url": "https://dust.api.mlsp.kr/images/UMP45.png",
                                 "subtitle": "여친이 없는 당신을 위한 가상의 여자친구.",
                                 "buttons": [
                                     {
@@ -167,7 +163,7 @@ class FacebookMessenger:
                         "elements": [
                             {
                                 "title": "소스 코드",
-                                "image_url": "https://icon-library.net/images/github-svg-icon/github-svg-icon-18.jpg",
+                                "image_url": "https://dust.api.mlsp.kr/images/Github.png",
                                 "subtitle": "미세봇™ 의 소스코드입니다. 현재는 보안 문제로 소스코드가 비공개화 된 점 양해 부탁드립니다.\n"
                                             "소스코드가 보고 싶으신 분들은 \n"
                                             "'anonymous.whoru.human@gmail.com'\n"
@@ -210,7 +206,7 @@ class FacebookMessenger:
                         "elements": [
                             {
                                 "title": "누가 만들었어?",
-                                "image_url": "https://icon-library.net/images/github-svg-icon/github-svg-icon-18.jpg",
+                                "image_url": "https://dust.api.mlsp.kr/images/Github.png",
                                 "subtitle": "미세봇™ 의 개발자, @HackerJang(장지우) 입니다!",
                                 "buttons": [
                                     {
