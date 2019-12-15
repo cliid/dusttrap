@@ -31,7 +31,7 @@ def redirect_v1():
 
 @app.route('/v1.0/')
 def hello():
-    return 'What the 버-억'
+    return 'DustTrap™ Server API'
 
 
 @app.route('/v1.0/webhook', methods=['GET', 'POST'])
@@ -150,7 +150,7 @@ def messenger():
                                 username = user_info['data']['last_name'] + user_info['data']['first_name']
 
                                 if user_info['result'] == 'success':
-                                    fb.send_text_message(recipient_id, '안녕하세요, ' + username + '님!')
+                                    fb.send_text_message(recipient_id, '안녕하세요, ' + username + ' 님!')
                                     fb.qr_start(recipient_id)
                                     continue
                                 else:
@@ -180,6 +180,7 @@ def messenger():
                                         continue
                                     else:
                                         message = user_info['error']
+                                        fb.qr_default(recipient_id)
                                         fb.send_text_message(recipient_id, message)
                                         continue
 
@@ -199,6 +200,7 @@ def messenger():
                                         continue
                                     else:
                                         message = user_info['error']
+                                        fb.qr_default(recipient_id)
                                         fb.send_text_message(recipient_id, message)
                                         continue
 
@@ -210,18 +212,21 @@ def messenger():
                                 user_info = fb.get_user_info(recipient_id)
 
                                 if user_info['result'] == 'success':
-                                    fb.send_message(recipient_id, '미세봇™ 은 @HackerJang(장지우)가 만든 '
+                                    fb.qr_know_more(recipient_id)
+                                    fb.send_message(recipient_id, '미세봇™ 은 '
                                                                   '실시간 미세먼지 + α 페메봇입니다! 🧐')
                                     fb.send_more(recipient_id)
                                     continue
                                 else:
                                     if user_info['code'] == 'FB_PAGE':
-                                        fb.send_message(recipient_id, '미세봇™ 은 @HackerJang(장지우)가 만든 '
+                                        fb.qr_know_more(recipient_id)
+                                        fb.send_message(recipient_id, '미세봇™ 은 '
                                                                       '미세먼지 실시간 확인 페메봇입니다! 🧐')
                                         fb.send_more(recipient_id)
                                         continue
                                     else:
                                         message = user_info['error']
+                                        fb.qr_default(recipient_id)
                                         fb.send_text_message(recipient_id, message)
                                         continue
 
@@ -233,6 +238,7 @@ def messenger():
                                 user_info = fb.get_user_info(recipient_id)
 
                                 if user_info['result'] == 'success':
+                                    fb.qr_default(recipient_id)
                                     fb.send_message(recipient_id, '이렇게 해보세요:')
                                     fb.send_message(recipient_id, '> 내일 강남구 미세먼지\n'
                                                                   '> 어제 강남구 미세먼지 좀 알려줘!\n'
@@ -241,6 +247,7 @@ def messenger():
                                     continue
                                 else:
                                     if user_info['code'] == 'FB_PAGE':
+                                        fb.qr_default(recipient_id)
                                         fb.send_message(recipient_id, '이렇게 해보세요:')
                                         fb.send_message(recipient_id, '> 내일 강남구 미세먼지\n'
                                                                       '> 어제 강남구 미세먼지 좀 알려줘!\n'
@@ -249,6 +256,7 @@ def messenger():
                                         continue
                                     else:
                                         message = user_info['error']
+                                        fb.qr_default(recipient_id)
                                         fb.send_text_message(recipient_id, message)
                                         continue
 
@@ -260,14 +268,17 @@ def messenger():
                                 user_info = fb.get_user_info(recipient_id)
 
                                 if user_info['result'] == 'success':
+                                    fb.qr_default(recipient_id)
                                     fb.send_message(recipient_id, '아직 개발중입니다! 🥳')
                                     continue
                                 else:
                                     if user_info['code'] == 'FB_PAGE':
+                                        fb.qr_default(recipient_id)
                                         fb.send_message(recipient_id, '아직 개발중입니다! 🥳')
                                         continue
                                     else:
                                         message = user_info['error']
+                                        fb.qr_default(recipient_id)
                                         fb.send_text_message(recipient_id, message)
                                         continue
 
@@ -289,6 +300,7 @@ def messenger():
                                         continue
                                     else:
                                         message = user_info['error']
+                                        fb.qr_default(recipient_id)
                                         fb.send_text_message(recipient_id, message)
                                         continue
 
@@ -310,6 +322,7 @@ def messenger():
                                         continue
                                     else:
                                         message = user_info['error']
+                                        fb.qr_default(recipient_id)
                                         fb.send_text_message(recipient_id, message)
                                         continue
 
@@ -328,6 +341,7 @@ def messenger():
                                         continue
                                     else:
                                         message = user_info['error']
+                                        fb.qr_default(recipient_id)
                                         fb.send_text_message(recipient_id, message)
                                         continue
                         else:

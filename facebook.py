@@ -195,6 +195,46 @@ class FacebookMessenger:
                 "result": "success"
             }
 
+    def send_who_made_it(self, recipient_id):
+        request_url = self.GRAPH_URL + ACCESS_TOKEN
+        headers = {'content-type': 'application/json'}
+        parameters = {
+            "recipient": {
+                "id": recipient_id
+            },
+            "message": {
+                "attachment": {
+                    "type": "template",
+                    "payload": {
+                        "template_type": "generic",
+                        "elements": [
+                            {
+                                "title": "누가 만들었어?",
+                                "image_url": "https://icon-library.net/images/github-svg-icon/github-svg-icon-18.jpg",
+                                "subtitle": "미세봇™ 의 개발자, @HackerJang(장지우) 입니다!",
+                                "buttons": [
+                                    {
+                                        "type": "web_url",
+                                        "url": "https://github.com/HackerJang",
+                                        "title": "HackerJang Github"
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                }
+            }
+        }
+        print('>> 애플리케이션: %s 에게 소스코드 보냅니다...' % recipient_id)
+        response = requests.post(request_url, data=json.dumps(parameters), headers=headers)
+
+        if response.status_code == 200:
+            print('>> 애플리케이션: %s 에게 소스코드를 성공적으로 보냈습니다!' % recipient_id)
+
+            return {
+                "result": "success"
+            }
+
     def qr_start(self, recipient_id):
         request_url = self.GRAPH_URL + ACCESS_TOKEN
         headers = {'content-type': 'application/json'}
