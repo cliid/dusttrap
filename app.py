@@ -75,14 +75,13 @@ def messenger():
                                 user_info = fb.get_user_info(recipient_id)
 
                                 if user_info['result'] == 'success':
-                                    fb.send_text_message(recipient_id, '만나서 반가워요! 이제 한번 제가 할 수 있는 것들에 대해 알아볼까요?')
                                     fb.qr_know_me(recipient_id)
                                 else:
                                     if user_info['code'] == 'FB_PAGE':
-                                        fb.send_text_message(recipient_id, '만나서 반가워요! 이제 한번 제가 할 수 있는 것들에 대해 알아볼까요?')
                                         fb.qr_know_me(recipient_id)
                                     else:
                                         message = user_info['error']
+                                        fb.send_text_message(recipient_id, message)
                                 continue
 
                             # Intent: 미세먼지 데이터 가져오기
