@@ -106,6 +106,10 @@ def messenger():
                             elif intent == '이상함':
                                 message = '헤엣?'
 
+                            elif intent == '더 알아보기':
+                                fb.send_text_message(recipient_id, '제가 할 수 있는 것들은 이런 것들이 있어요.')
+                                fb.send_more(recipient_id)
+
                             else:
                                 message = '넹?'
                                 fb.send_text_message(recipient_id, message)
@@ -135,31 +139,16 @@ def messenger():
                                 # 사용자 정보 가져오기
                                 fb = FacebookMessenger()
                                 user_info = fb.get_user_info(recipient_id)
+                                username = user_info['data']['last_name'] + user_info['data']['first_name']
 
                                 if user_info['result'] == 'success':
+                                    fb.send_text_message(recipient_id, '안녕하세요, ' + username + '님!')
                                     fb.qr_start(recipient_id)
                                     continue
                                 else:
                                     if user_info['code'] == 'FB_PAGE':
                                         fb.qr_start(recipient_id)
                                         continue
-                                    else:
-                                        message = user_info['error']
-                                        fb.send_text_message(recipient_id, message)
-                                        continue
-
-                            elif payload == "NICE_TO_MEET_YOU":
-                                # <만나서 반가워!> 경우
-
-                                # 사용자 정보 가져오기
-                                fb = FacebookMessenger()
-                                user_info = fb.get_user_info(recipient_id)
-
-                                if user_info['result'] == 'success':
-                                    fb.qr_default(recipient_id)
-                                else:
-                                    if user_info['code'] == 'FB_PAGE':
-                                        fb.qr_default(recipient_id)
                                     else:
                                         message = user_info['error']
                                         fb.send_text_message(recipient_id, message)
@@ -193,13 +182,55 @@ def messenger():
 
                                 if user_info['result'] == 'success':
                                     fb.send_message(recipient_id, '미세봇™ 은 @HackerJang(장지우)가 만든 '
-                                                                  '미세먼지 실시간 확인 페메봇입니다! 🧐')
-                                    fb.qr_know_more(recipient_id)
+                                                                  '실시간 미세먼지 + α 페메봇입니다! 🧐')
+                                    fb.send_more(recipient_id)
                                 else:
                                     if user_info['code'] == 'FB_PAGE':
                                         fb.send_message(recipient_id, '미세봇™ 은 @HackerJang(장지우)가 만든 '
                                                                       '미세먼지 실시간 확인 페메봇입니다! 🧐')
-                                        fb.qr_know_more(recipient_id)
+                                        fb.send_more(recipient_id)
+                                    else:
+                                        message = user_info['error']
+                                        fb.send_text_message(recipient_id, message)
+                                        continue
+
+                            elif payload == "HOW_TO_USE":
+                                # <쓰는 법 알아보기> 경우
+
+                                # 사용자 정보 가져오기
+                                fb = FacebookMessenger()
+                                user_info = fb.get_user_info(recipient_id)
+
+                                if user_info['result'] == 'success':
+                                    fb.send_message(recipient_id, '이렇게 해보세요:')
+                                    fb.send_message(recipient_id, '> 내일 강남구 미세먼지\n'
+                                                                  '> 어제 강남구 미세먼지 좀 알려줘!\n'
+                                                                  '> 강남구')
+                                    fb.send_message(recipient_id, 'AI의 힘 덕분에 원하시는 대로 말할 수도 있어요. 한번 마음대로 불러 주세요✌')
+                                else:
+                                    if user_info['code'] == 'FB_PAGE':
+                                        fb.send_message(recipient_id, '이렇게 해보세요:')
+                                        fb.send_message(recipient_id, '> 내일 강남구 미세먼지\n'
+                                                                      '> 어제 강남구 미세먼지 좀 알려줘!\n'
+                                                                      '> 강남구')
+                                        fb.send_message(recipient_id, 'AI의 힘 덕분에 원하시는 대로 말할 수도 있어요. 한번 마음대로 불러 주세요✌')
+                                    else:
+                                        message = user_info['error']
+                                        fb.send_text_message(recipient_id, message)
+                                        continue
+
+                            elif payload == "IN_DEVELOPMENT":
+                                # <아직 개발중> 경우
+
+                                # 사용자 정보 가져오기
+                                fb = FacebookMessenger()
+                                user_info = fb.get_user_info(recipient_id)
+
+                                if user_info['result'] == 'success':
+                                    fb.send_message(recipient_id, '아직 개발중입니다! 🥳')
+                                else:
+                                    if user_info['code'] == 'FB_PAGE':
+                                        fb.send_message(recipient_id, '아직 개발중입니다! 🥳')
                                     else:
                                         message = user_info['error']
                                         fb.send_text_message(recipient_id, message)

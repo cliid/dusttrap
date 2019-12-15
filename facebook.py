@@ -96,6 +96,62 @@ class FacebookMessenger:
                 "result": "success"
             }
 
+    def send_more(self, recipient_id):
+        request_url = self.GRAPH_URL + ACCESS_TOKEN
+        headers = {'content-type': 'application/json'}
+        parameters = {
+            "recipient": {
+                "id": recipient_id
+            },
+            "message": {
+                "attachment": {
+                    "type": "template",
+                    "payload": {
+                        "template_type": "generic",
+                        "elements": [
+                            {
+                                "title": "미세먼지 불러오기",
+                                "image_url": "https://static.wixstatic.com/media/ab8bd5_c465b19bcb894"
+                                             "d6ba5ab646e8d2cf7dc~mv2.jpg/v1/crop/x_0,y_0,w_1279,h_774/fil"
+                                             "l/w_1279,h_774,al_c,q_85/%EB%AF%B8%EC%84%B8%EB%A8%BC%EC%A7%80-%E"
+                                             "B%B9%84%EA%B5%90-%EC%82%AC%EC%A7%84.webp",
+                                "subtitle": "전국의 미세먼지 데이터를 눈 깜빡할 사이에 불러올 수 있어요.",
+                                "buttons": [
+                                    {
+                                        "type": "postback",
+                                        "title": "쓰는 법 알아보기",
+                                        "payload": "HOW_TO_USE"
+                                    }
+                                ]
+                            },
+                            {
+                                "title": "가상의 여자친구",
+                                "image_url": "https://66.media.tumblr.com/6c40286d3407e2f"
+                                             "f6ee4dc93e131aaec/tumblr_pjh3nz4weK1tap7mi_1280.png",
+                                "subtitle": "여친이 없는 당신을 위한 가상의 여자친구.",
+                                "buttons": [
+                                    {
+                                        "type": "postback",
+                                        "title": "아직 개발중",
+                                        "payload": "IN_DEVELOPMENT"
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                }
+            }
+        }
+        print('>> 애플리케이션: %s 에게 템플릿을 보냅니다...' % recipient_id)
+        response = requests.post(request_url, data=json.dumps(parameters), headers=headers)
+
+        if response.status_code == 200:
+            print('>> 애플리케이션: %s 에게 템플릿을 성공적으로 보냈습니다!' % recipient_id)
+
+            return {
+                "result": "success"
+            }
+
     def send_source_code(self, recipient_id):
         request_url = self.GRAPH_URL + ACCESS_TOKEN
         headers = {'content-type': 'application/json'}
