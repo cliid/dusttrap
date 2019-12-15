@@ -262,3 +262,5 @@ uwsgi.ini
 #Special Keys
 
 key.py
+
+dt.log
