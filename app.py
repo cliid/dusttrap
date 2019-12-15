@@ -75,13 +75,15 @@ def messenger():
                                 user_info = fb.get_user_info(recipient_id)
 
                                 if user_info['result'] == 'success':
-                                    message = '안녕하세요, %s%s 님! 👋' \
-                                              '' % (user_info['data']['last_name'], user_info['data']['first_name'])
+                                    fb.send_text_message(recipient_id, '만나서 반가워요! 이제 한번 제가 할 수 있는 것들에 대해 알아볼까요?')
+                                    fb.qr_know_me(recipient_id)
                                 else:
                                     if user_info['code'] == 'FB_PAGE':
-                                        message = '안녕하세요! 👋'
+                                        fb.send_text_message(recipient_id, '만나서 반가워요! 이제 한번 제가 할 수 있는 것들에 대해 알아볼까요?')
+                                        fb.qr_know_me(recipient_id)
                                     else:
                                         message = user_info['error']
+                                continue
 
                             # Intent: 미세먼지 데이터 가져오기
                             elif intent == '미세먼지':
@@ -110,6 +112,9 @@ def messenger():
                             elif intent == '더보기':
                                 fb.send_text_message(recipient_id, '제가 할 수 있는 것들은 이런 것들이 있어요.')
                                 fb.send_more(recipient_id)
+
+                            elif intent == '소스코드':
+                                fb.send_source_code(recipient_id)
 
                             else:
                                 message = '넹?'
@@ -255,6 +260,26 @@ def messenger():
                                         message = user_info['error']
                                         fb.send_text_message(recipient_id, message)
                                         continue
+
+                            elif payload == "USAGE_TIP":
+                                # <팁 보기> 경우
+
+                                # 사용자 정보 가져오기
+                                fb = FacebookMessenger()
+                                user_info = fb.get_user_info(recipient_id)
+
+                                if user_info['result'] == 'success':
+                                    fb.send_source_code(recipient_id)
+                                    fb.qr_default(recipient_id)
+                                else:
+                                    if user_info['code'] == 'FB_PAGE':
+                                        fb.send_source_code(recipient_id)
+                                        fb.qr_default(recipient_id)
+                                    else:
+                                        message = user_info['error']
+                                        fb.send_text_message(recipient_id, message)
+                                        continue
+
                             else:
                                 # <위를 제외한 모든 경우>
 

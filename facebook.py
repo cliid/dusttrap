@@ -169,7 +169,7 @@ class FacebookMessenger:
                                 "title": "소스 코드",
                                 "image_url": "https://icon-library.net/images/github-svg-icon/github-svg-icon-18.jpg",
                                 "subtitle": "미세봇™ 의 소스코드입니다. 현재는 보안 문제로 소스코드가 비공개화 된 점 양해 부탁드립니다.\n"
-                                            "소스코드가 보고 싶으신 분들은 "
+                                            "소스코드가 보고 싶으신 분들은 \n"
                                             "'anonymous.whoru.human@gmail.com'\n"
                                             "으로 연락 주시면 최대한 빠르게 답변 드리도록 하겠습니다!",
                                 "buttons": [
@@ -290,6 +290,39 @@ class FacebookMessenger:
 
         if response.status_code == 200:
             print('>> 애플리케이션: %s 에게 "Quick Reply: Know More"를 성공적으로 보냈습니다!' % recipient_id)
+
+            return {
+                "result": "success"
+            }
+
+    def qr_know_me(self, recipient_id):
+        request_url = self.GRAPH_URL + ACCESS_TOKEN
+        headers = {'content-type': 'application/json'}
+        parameters = {
+            "recipient": {
+                "id": recipient_id
+            },
+            "messaging_type": "RESPONSE",
+            "message": {
+                "quick_replies": [
+                    {
+                        "content_type": "text",
+                        "title": "그래!",
+                        "payload": "KNOW_ME"
+                    },
+                    {
+                        "content_type": "text",
+                        "title": "🚨 버그 신고하기",
+                        "payload": "BUG_REPORT"
+                    }
+                ]
+            }
+        }
+        print('>> 애플리케이션: %s 에게 "Quick Reply: Know Me" 보냅니다...' % recipient_id)
+        response = requests.post(request_url, data=json.dumps(parameters), headers=headers)
+
+        if response.status_code == 200:
+            print('>> 애플리케이션: %s 에게 "Quick Reply: Know Me"를 성공적으로 보냈습니다!' % recipient_id)
 
             return {
                 "result": "success"
