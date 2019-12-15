@@ -37,7 +37,7 @@ def hello():
 @app.route('/v1.0/webhook', methods=['GET', 'POST'])
 def messenger():
     if request.method == 'GET':
-        # GET 방식으로 접속한 경우, Verification Test 중이다.
+        # GET 방식 (Verification)
         from key import VERIFY_TOKEN
         if request.args.get("hub.verify_token") == VERIFY_TOKEN:
             return request.args.get("hub.challenge")
@@ -45,6 +45,7 @@ def messenger():
             return 'Verification Token이 올바르지 않습니다! 토큰 값을 다시 확인하세요.'
 
     if request.method == 'POST':
+        # POST 방식 (Actual Request from FB)
         try:
             req = request.get_json()
             print('>> 디버그: Webhook 요청 JSON:\n%s' % str(req))

@@ -156,7 +156,7 @@ class FacebookMessenger:
                         "payload": "NICE_TO_MEET_YOU"
                     },
                     {
-                        "type": "postback",
+                        "content_type": "text",
                         "title": "더 알아볼래!",
                         "payload": "KNOW_MORE"
                     },
