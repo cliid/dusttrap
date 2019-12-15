@@ -90,7 +90,7 @@ def messenger():
                                 try:
                                     gu = nlp.return_gu(project_id, key.SESSION_ID, request_str, key.DLC)
                                     dt.today_dust_request(recipient_id, gu)
-                                    fb.qr_fine_dust(recipient_id)
+                                    fb.qr_fine_dust(recipient_id, gu)
                                 except:
                                     fb.send_message(recipient_id, '죄송하지만 요청하신 곳의 미세먼지 데이터가 없습니다.\n'
                                                                   '시/군/구의 이름으로 다시 시도해주시면 감사하겠습니다. :)')
@@ -98,28 +98,25 @@ def messenger():
                                 continue
 
                             elif intent == '버그':
-                                fb.qr_default(recipient_id)
-                                fb.send_text_message(recipient_id, '아래 버튼을 눌러서 신고해주세요!')
+                                fb.qr_default(recipient_id, '아래 버튼을 눌러서 신고해주세요!')
                                 fb.send_bug(recipient_id)
                                 continue
 
                             elif intent == '웃김':
-                                fb.qr_default(recipient_id)
-                                fb.send_text_message(recipient_id, 'ㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋ')
+                                fb.qr_default(recipient_id, 'ㅋㅋㅋㅋ')
                                 continue
 
                             elif intent == '이상함':
-                                fb.qr_default(recipient_id)
-                                fb.send_text_message(recipient_id, '헤엣?')
+                                fb.qr_default(recipient_id, '헤엣?')
                                 continue
 
                             elif intent == '더보기':
                                 fb.qr_know_more(recipient_id)
-                                fb.send_text_message(recipient_id, '제가 할 수 있는 것들은 이런 것들이 있어요.')
                                 fb.send_more(recipient_id)
                                 continue
 
                             elif intent == '소스코드':
+                                fb.qr_default(recipient_id, '미세봇™ 의 소스코드입니다.')
                                 fb.send_source_code(recipient_id)
                                 continue
                             else:
@@ -171,16 +168,13 @@ def messenger():
 
                                 if user_info['result'] == 'success':
                                     fb.send_bug(recipient_id)
-                                    fb.qr_default(recipient_id)
                                     continue
                                 else:
                                     if user_info['code'] == 'FB_PAGE':
                                         fb.send_bug(recipient_id)
-                                        fb.qr_default(recipient_id)
                                         continue
                                     else:
                                         message = user_info['error']
-                                        fb.qr_default(recipient_id)
                                         fb.send_text_message(recipient_id, message)
                                         continue
 
@@ -290,17 +284,17 @@ def messenger():
                                 user_info = fb.get_user_info(recipient_id)
 
                                 if user_info['result'] == 'success':
-                                    fb.qr_default(recipient_id)
+                                    fb.qr_default(recipient_id, '미세봇™ 의 소스코드입니다.')
                                     fb.send_source_code(recipient_id)
                                     continue
                                 else:
                                     if user_info['code'] == 'FB_PAGE':
-                                        fb.qr_default(recipient_id)
+                                        fb.qr_default(recipient_id, '미세봇™ 의 소스코드입니다.')
                                         fb.send_source_code(recipient_id)
                                         continue
                                     else:
                                         message = user_info['error']
-                                        fb.qr_default(recipient_id)
+                                        fb.qr_default(recipient_id, '미세봇™ 의 소스코드입니다.')
                                         fb.send_text_message(recipient_id, message)
                                         continue
 

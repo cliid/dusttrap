@@ -164,7 +164,7 @@ class FacebookMessenger:
                             {
                                 "title": "소스 코드",
                                 "image_url": "https://dust.api.mlsp.kr/images/Github.png",
-                                "subtitle": "미세봇™ 의 소스코드입니다. 현재는 보안 문제로 소스코드가 비공개화 된 점 양해 부탁드립니다.\n"
+                                "subtitle": "현재는 보안 문제로 소스코드가 비공개화 된 점 양해 부탁드립니다.\n"
                                             "소스코드가 보고 싶으신 분들은 \n"
                                             "'anonymous.whoru.human@gmail.com'\n"
                                             "으로 연락 주시면 최대한 빠르게 답변 드리도록 하겠습니다!",
@@ -270,7 +270,7 @@ class FacebookMessenger:
                 "result": "success"
             }
 
-    def qr_fine_dust(self, recipient_id):
+    def qr_fine_dust(self, recipient_id, gu):
         request_url = self.GRAPH_URL + ACCESS_TOKEN
         headers = {'content-type': 'application/json'}
         parameters = {
@@ -279,6 +279,7 @@ class FacebookMessenger:
             },
             "messaging_type": "RESPONSE",
             "message": {
+                "text": "→ " + gu + "의 미세먼지 데이터입니다. 😚",
                 "quick_replies": [
                     {
                         "content_type": "text",
@@ -306,6 +307,7 @@ class FacebookMessenger:
                 "id": recipient_id
             },
             "messaging_type": "RESPONSE",
+            "text": "제가 할 수 있는 것들은 이런 것들이 있어요.",
             "message": {
                 "quick_replies": [
                     {
@@ -364,7 +366,7 @@ class FacebookMessenger:
                 "result": "success"
             }
 
-    def qr_default(self, recipient_id):
+    def qr_default(self, recipient_id, send_text):
         request_url = self.GRAPH_URL + ACCESS_TOKEN
         headers = {'content-type': 'application/json'}
         parameters = {
@@ -372,6 +374,7 @@ class FacebookMessenger:
                 "id": recipient_id
             },
             "messaging_type": "RESPONSE",
+            "text": send_text,
             "message": {
                 "quick_replies": [
                     {
