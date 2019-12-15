@@ -106,7 +106,7 @@ def messenger():
                             elif intent == '이상함':
                                 message = '헤엣?'
 
-                            elif intent == '더 알아보기':
+                            elif intent == '더보기':
                                 fb.send_text_message(recipient_id, '제가 할 수 있는 것들은 이런 것들이 있어요.')
                                 fb.send_more(recipient_id)
 
