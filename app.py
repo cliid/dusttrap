@@ -97,6 +97,7 @@ def messenger():
 
                             elif intent == '버그':
                                 fb.send_text_message(recipient_id, '아래 버튼을 눌러서 신고해주세요!')
+                                fb.qr_default(recipient_id)
                                 fb.send_bug(recipient_id)
                                 continue
 
