@@ -179,6 +179,23 @@ def messenger():
                                         fb.send_text_message(recipient_id, message)
                                         continue
 
+                            elif payload == "KNOW_ME":
+                                # <그래!> 경우
+
+                                # 사용자 정보 가져오기
+                                fb = FacebookMessenger()
+                                user_info = fb.get_user_info(recipient_id)
+
+                                if user_info['result'] == 'success':
+                                    fb.qr_know_me(recipient_id)
+                                else:
+                                    if user_info['code'] == 'FB_PAGE':
+                                        fb.qr_know_me(recipient_id)
+                                    else:
+                                        message = user_info['error']
+                                        fb.send_text_message(recipient_id, message)
+                                        continue
+
                             elif payload == "KNOW_MORE":
                                 # <더 알아볼래!> 경우
 
