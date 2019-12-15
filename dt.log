@@ -1382,3 +1382,322 @@ mapped 64400 bytes (62 KB) for 1 cores
 WSGI app 0 (mountpoint='') ready in 1 seconds on interpreter 0x7f47e0 pid: 2282 (default app)
 *** uWSGI is running in multiple interpreter mode ***
 spawned uWSGI worker 1 (and the only) (pid: 2282, cores: 1)
+*** Starting uWSGI 2.0.18 (32bit) on [Sun Dec 15 23:12:19 2019] ***
+compiled with version: 8.3.0 on 16 July 2019 12:06:45
+os: Linux-4.19.86-v7l+ #1283 SMP Fri Nov 29 18:37:40 GMT 2019
+nodename: wiki.mlsp.kr
+machine: armv7l
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 4
+current working directory: /
+detected binary path: /home/pi/code/dusttrap/venv/bin/uwsgi
+chdir() to /home/pi/code/dusttrap
+*** WARNING: you are running uWSGI without its master process manager ***
+your processes number limit is 29184
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to UNIX address /tmp/dusttrap.sock fd 3
+Python version: 3.7.3 (default, Apr  3 2019, 05:39:12)  [GCC 8.2.0]
+Set PythonHome to /home/pi/code/dusttrap/venv
+*** Python threads support is disabled. You can enable it with --enable-threads ***
+Python main interpreter initialized at 0x1c057e0
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 64400 bytes (62 KB) for 1 cores
+*** Operational MODE: single process ***
+WSGI app 0 (mountpoint='') ready in 1 seconds on interpreter 0x1c057e0 pid: 2314 (default app)
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI worker 1 (and the only) (pid: 2314, cores: 1)
+*** Starting uWSGI 2.0.18 (32bit) on [Sun Dec 15 23:13:49 2019] ***
+compiled with version: 8.3.0 on 16 July 2019 12:06:45
+os: Linux-4.19.86-v7l+ #1283 SMP Fri Nov 29 18:37:40 GMT 2019
+nodename: wiki.mlsp.kr
+machine: armv7l
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 4
+current working directory: /
+detected binary path: /home/pi/code/dusttrap/venv/bin/uwsgi
+chdir() to /home/pi/code/dusttrap
+*** WARNING: you are running uWSGI without its master process manager ***
+your processes number limit is 29184
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to UNIX address /tmp/dusttrap.sock fd 3
+Python version: 3.7.3 (default, Apr  3 2019, 05:39:12)  [GCC 8.2.0]
+Set PythonHome to /home/pi/code/dusttrap/venv
+*** Python threads support is disabled. You can enable it with --enable-threads ***
+Python main interpreter initialized at 0x125a7e0
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 64400 bytes (62 KB) for 1 cores
+*** Operational MODE: single process ***
+WSGI app 0 (mountpoint='') ready in 1 seconds on interpreter 0x125a7e0 pid: 2326 (default app)
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI worker 1 (and the only) (pid: 2326, cores: 1)
+*** Starting uWSGI 2.0.18 (32bit) on [Sun Dec 15 23:15:20 2019] ***
+compiled with version: 8.3.0 on 16 July 2019 12:06:45
+os: Linux-4.19.86-v7l+ #1283 SMP Fri Nov 29 18:37:40 GMT 2019
+nodename: wiki.mlsp.kr
+machine: armv7l
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 4
+current working directory: /
+detected binary path: /home/pi/code/dusttrap/venv/bin/uwsgi
+chdir() to /home/pi/code/dusttrap
+*** WARNING: you are running uWSGI without its master process manager ***
+your processes number limit is 29184
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to UNIX address /tmp/dusttrap.sock fd 3
+Python version: 3.7.3 (default, Apr  3 2019, 05:39:12)  [GCC 8.2.0]
+Set PythonHome to /home/pi/code/dusttrap/venv
+*** Python threads support is disabled. You can enable it with --enable-threads ***
+Python main interpreter initialized at 0x12e77e0
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 64400 bytes (62 KB) for 1 cores
+*** Operational MODE: single process ***
+WSGI app 0 (mountpoint='') ready in 1 seconds on interpreter 0x12e77e0 pid: 2349 (default app)
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI worker 1 (and the only) (pid: 2349, cores: 1)
+*** Starting uWSGI 2.0.18 (32bit) on [Sun Dec 15 23:16:50 2019] ***
+compiled with version: 8.3.0 on 16 July 2019 12:06:45
+os: Linux-4.19.86-v7l+ #1283 SMP Fri Nov 29 18:37:40 GMT 2019
+nodename: wiki.mlsp.kr
+machine: armv7l
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 4
+current working directory: /
+detected binary path: /home/pi/code/dusttrap/venv/bin/uwsgi
+chdir() to /home/pi/code/dusttrap
+*** WARNING: you are running uWSGI without its master process manager ***
+your processes number limit is 29184
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to UNIX address /tmp/dusttrap.sock fd 3
+Python version: 3.7.3 (default, Apr  3 2019, 05:39:12)  [GCC 8.2.0]
+Set PythonHome to /home/pi/code/dusttrap/venv
+*** Python threads support is disabled. You can enable it with --enable-threads ***
+Python main interpreter initialized at 0x1c017e0
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 64400 bytes (62 KB) for 1 cores
+*** Operational MODE: single process ***
+WSGI app 0 (mountpoint='') ready in 1 seconds on interpreter 0x1c017e0 pid: 2357 (default app)
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI worker 1 (and the only) (pid: 2357, cores: 1)
+*** Starting uWSGI 2.0.18 (32bit) on [Sun Dec 15 23:18:21 2019] ***
+compiled with version: 8.3.0 on 16 July 2019 12:06:45
+os: Linux-4.19.86-v7l+ #1283 SMP Fri Nov 29 18:37:40 GMT 2019
+nodename: wiki.mlsp.kr
+machine: armv7l
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 4
+current working directory: /
+detected binary path: /home/pi/code/dusttrap/venv/bin/uwsgi
+chdir() to /home/pi/code/dusttrap
+*** WARNING: you are running uWSGI without its master process manager ***
+your processes number limit is 29184
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to UNIX address /tmp/dusttrap.sock fd 3
+Python version: 3.7.3 (default, Apr  3 2019, 05:39:12)  [GCC 8.2.0]
+Set PythonHome to /home/pi/code/dusttrap/venv
+*** Python threads support is disabled. You can enable it with --enable-threads ***
+Python main interpreter initialized at 0x2887e0
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 64400 bytes (62 KB) for 1 cores
+*** Operational MODE: single process ***
+WSGI app 0 (mountpoint='') ready in 1 seconds on interpreter 0x2887e0 pid: 2385 (default app)
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI worker 1 (and the only) (pid: 2385, cores: 1)
+*** Starting uWSGI 2.0.18 (32bit) on [Sun Dec 15 23:19:51 2019] ***
+compiled with version: 8.3.0 on 16 July 2019 12:06:45
+os: Linux-4.19.86-v7l+ #1283 SMP Fri Nov 29 18:37:40 GMT 2019
+nodename: wiki.mlsp.kr
+machine: armv7l
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 4
+current working directory: /
+detected binary path: /home/pi/code/dusttrap/venv/bin/uwsgi
+chdir() to /home/pi/code/dusttrap
+*** WARNING: you are running uWSGI without its master process manager ***
+your processes number limit is 29184
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to UNIX address /tmp/dusttrap.sock fd 3
+Python version: 3.7.3 (default, Apr  3 2019, 05:39:12)  [GCC 8.2.0]
+Set PythonHome to /home/pi/code/dusttrap/venv
+*** Python threads support is disabled. You can enable it with --enable-threads ***
+Python main interpreter initialized at 0xa367e0
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 64400 bytes (62 KB) for 1 cores
+*** Operational MODE: single process ***
+WSGI app 0 (mountpoint='') ready in 1 seconds on interpreter 0xa367e0 pid: 2396 (default app)
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI worker 1 (and the only) (pid: 2396, cores: 1)
+*** Starting uWSGI 2.0.18 (32bit) on [Sun Dec 15 23:21:22 2019] ***
+compiled with version: 8.3.0 on 16 July 2019 12:06:45
+os: Linux-4.19.86-v7l+ #1283 SMP Fri Nov 29 18:37:40 GMT 2019
+nodename: wiki.mlsp.kr
+machine: armv7l
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 4
+current working directory: /
+detected binary path: /home/pi/code/dusttrap/venv/bin/uwsgi
+chdir() to /home/pi/code/dusttrap
+*** WARNING: you are running uWSGI without its master process manager ***
+your processes number limit is 29184
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to UNIX address /tmp/dusttrap.sock fd 3
+Python version: 3.7.3 (default, Apr  3 2019, 05:39:12)  [GCC 8.2.0]
+Set PythonHome to /home/pi/code/dusttrap/venv
+*** Python threads support is disabled. You can enable it with --enable-threads ***
+Python main interpreter initialized at 0x18bb7e0
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 64400 bytes (62 KB) for 1 cores
+*** Operational MODE: single process ***
+WSGI app 0 (mountpoint='') ready in 1 seconds on interpreter 0x18bb7e0 pid: 2409 (default app)
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI worker 1 (and the only) (pid: 2409, cores: 1)
+*** Starting uWSGI 2.0.18 (32bit) on [Sun Dec 15 23:22:52 2019] ***
+compiled with version: 8.3.0 on 16 July 2019 12:06:45
+os: Linux-4.19.86-v7l+ #1283 SMP Fri Nov 29 18:37:40 GMT 2019
+nodename: wiki.mlsp.kr
+machine: armv7l
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 4
+current working directory: /
+detected binary path: /home/pi/code/dusttrap/venv/bin/uwsgi
+chdir() to /home/pi/code/dusttrap
+*** WARNING: you are running uWSGI without its master process manager ***
+your processes number limit is 29184
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to UNIX address /tmp/dusttrap.sock fd 3
+Python version: 3.7.3 (default, Apr  3 2019, 05:39:12)  [GCC 8.2.0]
+Set PythonHome to /home/pi/code/dusttrap/venv
+*** Python threads support is disabled. You can enable it with --enable-threads ***
+Python main interpreter initialized at 0x8707e0
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 64400 bytes (62 KB) for 1 cores
+*** Operational MODE: single process ***
+WSGI app 0 (mountpoint='') ready in 1 seconds on interpreter 0x8707e0 pid: 2419 (default app)
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI worker 1 (and the only) (pid: 2419, cores: 1)
+*** Starting uWSGI 2.0.18 (32bit) on [Sun Dec 15 23:24:22 2019] ***
+compiled with version: 8.3.0 on 16 July 2019 12:06:45
+os: Linux-4.19.86-v7l+ #1283 SMP Fri Nov 29 18:37:40 GMT 2019
+nodename: wiki.mlsp.kr
+machine: armv7l
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 4
+current working directory: /home/pi/code/dusttrap
+detected binary path: /home/pi/code/dusttrap/venv/bin/uwsgi
+chdir() to /home/pi/code/dusttrap
+*** WARNING: you are running uWSGI without its master process manager ***
+your processes number limit is 29184
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to UNIX address /tmp/dusttrap.sock fd 3
+Python version: 3.7.3 (default, Apr  3 2019, 05:39:12)  [GCC 8.2.0]
+Set PythonHome to /home/pi/code/dusttrap/venv
+*** Python threads support is disabled. You can enable it with --enable-threads ***
+Python main interpreter initialized at 0x4c92b8
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 64400 bytes (62 KB) for 1 cores
+*** Operational MODE: single process ***
+*** Starting uWSGI 2.0.18 (32bit) on [Sun Dec 15 23:24:23 2019] ***
+compiled with version: 8.3.0 on 16 July 2019 12:06:45
+os: Linux-4.19.86-v7l+ #1283 SMP Fri Nov 29 18:37:40 GMT 2019
+nodename: wiki.mlsp.kr
+machine: armv7l
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 4
+current working directory: /
+detected binary path: /home/pi/code/dusttrap/venv/bin/uwsgi
+chdir() to /home/pi/code/dusttrap
+*** WARNING: you are running uWSGI without its master process manager ***
+your processes number limit is 29184
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to UNIX address /tmp/dusttrap.sock fd 3
+Python version: 3.7.3 (default, Apr  3 2019, 05:39:12)  [GCC 8.2.0]
+Set PythonHome to /home/pi/code/dusttrap/venv
+*** Python threads support is disabled. You can enable it with --enable-threads ***
+Python main interpreter initialized at 0x1fbb7e0
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 64400 bytes (62 KB) for 1 cores
+*** Operational MODE: single process ***
+WSGI app 0 (mountpoint='') ready in 2 seconds on interpreter 0x4c92b8 pid: 2468 (default app)
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI worker 1 (and the only) (pid: 2468, cores: 1)
+WSGI app 0 (mountpoint='') ready in 1 seconds on interpreter 0x1fbb7e0 pid: 2474 (default app)
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI worker 1 (and the only) (pid: 2474, cores: 1)
+*** Starting uWSGI 2.0.18 (32bit) on [Sun Dec 15 23:25:53 2019] ***
+compiled with version: 8.3.0 on 16 July 2019 12:06:45
+os: Linux-4.19.86-v7l+ #1283 SMP Fri Nov 29 18:37:40 GMT 2019
+nodename: wiki.mlsp.kr
+machine: armv7l
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 4
+current working directory: /
+detected binary path: /home/pi/code/dusttrap/venv/bin/uwsgi
+chdir() to /home/pi/code/dusttrap
+*** WARNING: you are running uWSGI without its master process manager ***
+your processes number limit is 29184
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to UNIX address /tmp/dusttrap.sock fd 3
+Python version: 3.7.3 (default, Apr  3 2019, 05:39:12)  [GCC 8.2.0]
+Set PythonHome to /home/pi/code/dusttrap/venv
+*** Python threads support is disabled. You can enable it with --enable-threads ***
+Python main interpreter initialized at 0x130d7e0
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 64400 bytes (62 KB) for 1 cores
+*** Operational MODE: single process ***
+WSGI app 0 (mountpoint='') ready in 1 seconds on interpreter 0x130d7e0 pid: 2611 (default app)
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI worker 1 (and the only) (pid: 2611, cores: 1)
