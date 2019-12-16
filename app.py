@@ -90,7 +90,7 @@ def messenger():
                                     gu = nlp.return_gu(project_id, key.SESSION_ID, request_str, key.DLC)
                                     sido = nlp.return_sido(project_id, key.SESSION_ID, request_str, key.DLC)
                                     dt.today_dust_request(recipient_id, sido, gu)
-                                    fb.qr_fine_dust(recipient_id, gu)
+                                    fb.qr_fine_dust(recipient_id, sido, gu)
                                 except:
                                     fb.send_message(recipient_id, '죄송하지만 요청하신 곳의 미세먼지 데이터가 없습니다.\n'
                                                                   '시/군/구의 이름으로 다시 시도해주시면 감사하겠습니다. :)')

@@ -270,7 +270,7 @@ class FacebookMessenger:
                 "result": "success"
             }
 
-    def qr_fine_dust(self, recipient_id, gu):
+    def qr_fine_dust(self, recipient_id, sido, gu):
         request_url = self.GRAPH_URL + ACCESS_TOKEN
         headers = {'content-type': 'application/json'}
         parameters = {
@@ -279,7 +279,7 @@ class FacebookMessenger:
             },
             "messaging_type": "RESPONSE",
             "message": {
-                "text": "→ " + gu + "의 미세먼지 데이터입니다. 😚",
+                "text": "→ " + sido + " " + gu + "의 미세먼지 데이터입니다. 😚",
                 "quick_replies": [
                     {
                         "content_type": "text",
