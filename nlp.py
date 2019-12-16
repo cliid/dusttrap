@@ -9,6 +9,9 @@ import key
 
 class NaturalLanguageProcessing:
     DIALOGFLOW_URL = "https://dialogflow.googleapis.com/v2/projects/dusttrap-qoacwk/agent/sessions/"
+    oauth_key = json.load(open('dialogflow_key.json'))
+    scope = 'https://www.googleapis.com/auth/dialogflow'
+    auth = ServiceAccount.from_json(key=oauth_key, scopes=scope)
 
     def return_intent(self, project_id, session_id, text, language_code):
         session_client = df.SessionsClient()
@@ -20,13 +23,10 @@ class NaturalLanguageProcessing:
             response = session_client.detect_intent(session=session, query_input=query_input)
             return response.query_result.intent.display_name
 
-    def return_gu(self, project_id, session_id, text, language_code):
-        oauth_key = json.load(open('dialogflow_key.json'))
-        scope = 'https://www.googleapis.com/auth/dialogflow'
-        auth = ServiceAccount.from_json(key=oauth_key, scopes=scope)
+    def return_gu(self, text, language_code):
         request_url = self.DIALOGFLOW_URL + key.SESSION_ID + ":detectIntent"
         headers = {'Content-Type': 'application/json', 'charset': 'utf-8', 'Authorization': 'Bearer ' +
-                                                                                            auth.access_token}
+                                                                                            self.auth.access_token}
         parameters = {
             "queryInput": {
                 "text": {
@@ -37,17 +37,14 @@ class NaturalLanguageProcessing:
         }
         print('>>>>> NLP return_gu() function working now...')
         response = requests.post(request_url, data=json.dumps(parameters), headers=headers)
-        sel_gu = response.json()['queryResult']['parameters']['selected_gu'][0]
+        sel_gu = response.json()['queryResult']['parameters']['selected_gu']
 
         return sel_gu
 
-    def return_sido(self, project_id, session_id, text, language_code):
-        oauth_key = json.load(open('dialogflow_key.json'))
-        scope = 'https://www.googleapis.com/auth/dialogflow'
-        auth = ServiceAccount.from_json(key=oauth_key, scopes=scope)
+    def return_sido(self, text, language_code):
         request_url = self.DIALOGFLOW_URL + key.SESSION_ID + ":detectIntent"
         headers = {'Content-Type': 'application/json', 'charset': 'utf-8', 'Authorization': 'Bearer ' +
-                                                                                            auth.access_token}
+                                                                                            self.auth.access_token}
         parameters = {
             "queryInput": {
                 "text": {

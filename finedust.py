@@ -7,23 +7,8 @@ fb = facebook.FacebookMessenger()
 
 
 class FineDustRequest:
-    # 방식은 Get 방식
-    def today_dust_request(self, recipient_id, sido, gu):
-        gu_req_url = "http://openapi.airkorea.or.kr/openapi/services/rest/ArpltnInforInqireSvc/" \
-                     "getMsrstnAcctoRltmMesureDnsty?ServiceKey=n9ncCn2UecqURdAD62GyviK7CrTlgyCW" \
-                     "z7QapI49OZS3sma05WTl5k1whigvxcA0nwMdHyUpGhwSz2O0qBnseA%3D%3D&stationName=" + gu + \
-                     "&dataTerm=DAILY&_returnType=json"
-        sido_req_url = "http://openapi.airkorea.or.kr/openapi/services/rest/ArpltnInforInqireSvc/" \
-                       "getCtprvnRltmMesureDnsty?ServiceKey=n9ncCn2UecqURdAD62GyviK7CrTlgyCW" \
-                       "z7QapI49OZS3sma05WTl5k1whigvxcA0nwMdHyUpGhwSz2O0qBnseA%3D%3D&sidoName=" + sido + \
-                       "&dataTerm=DAILY&_returnType=json"
-
-        # TODO: Send w/ Params. (NOT DIRTY URL)
-        response = requests.get(url=gu_req_url)
+    def pm_grader(self, response, recipient_id, si_do, gu):
         data = response.json()
-        if data['totalCount'] == 0 or data['totalCount'] == '0':
-            response = requests.get(url=sido_req_url)
-            data = response.json()
 
         pm10_value = str(data['list'][0]['pm10Value'])
         pm25_value = str(data['list'][0]['pm25Value'])
@@ -58,7 +43,15 @@ class FineDustRequest:
         else:
             pm25_text_grade = 'N/A'
 
-        send_message = "\"" + sido + gu + "\": \n\n" + "미세먼지 농도: " + pm10_value \
+        if si_do != "" and gu != "":
+            custom_text = si_do + " " + gu
+        elif si_do != "" and gu == "":
+            custom_text = si_do
+        elif si_do == "" and gu != "":
+            custom_text = gu
+        else:
+            custom_text = "N/A"
+        send_message = "\"" + custom_text + "\": \n\n" + "미세먼지 농도: " + pm10_value \
                        + "μg/㎥ " + "(" + pm10_text_grade + "),\n" + "초미세먼지 농도: " + \
                        pm25_value + "μg/㎥ " + "(" + pm25_text_grade + ") 입니다." + "\n\n" + special_message
         print('>>> 미세먼지 송출 메시지: \n\n' + send_message)
@@ -66,6 +59,31 @@ class FineDustRequest:
 
         if response.status_code == 200:
             print('>> 애플리케이션: "미세먼지 API"로부터 StatusCode 200을 받았습니다.')
+
+    # 방식은 Get 방식
+    def today_dust_request(self, recipient_id, si_do, gu):
+        gu_req_url = "http://openapi.airkorea.or.kr/openapi/services/rest/ArpltnInforInqireSvc/" \
+                     "getMsrstnAcctoRltmMesureDnsty?ServiceKey=n9ncCn2UecqURdAD62GyviK7CrTlgyCW" \
+                     "z7QapI49OZS3sma05WTl5k1whigvxcA0nwMdHyUpGhwSz2O0qBnseA%3D%3D&stationName=" + gu + \
+                     "&dataTerm=DAILY&_returnType=json"
+        sido_req_url = "http://openapi.airkorea.or.kr/openapi/services/rest/ArpltnInforInqireSvc/" \
+                       "getCtprvnRltmMesureDnsty?ServiceKey=n9ncCn2UecqURdAD62GyviK7CrTlgyCW" \
+                       "z7QapI49OZS3sma05WTl5k1whigvxcA0nwMdHyUpGhwSz2O0qBnseA%3D%3D&sidoName=" + si_do + \
+                       "&dataTerm=DAILY&_returnType=json"
+
+        # TODO: Send w/ Params. (NOT DIRTY URL)
+
+        if si_do != "" and gu != "":
+            response = requests.get(url=gu_req_url)
+            self.pm_grader(response, recipient_id, si_do, gu)
+        elif si_do != "" and gu == "":
+            response = requests.get(url=sido_req_url)
+            self.pm_grader(response, recipient_id, si_do, gu)
+        elif si_do == "" and gu != "":
+            response = requests.get(url=gu_req_url)
+            self.pm_grader(response, recipient_id, si_do, gu)
+        else:
+            fb.send_text_message(recipient_id, '다시 입력해주세요!')
 
             return {
                 "result": "success"
