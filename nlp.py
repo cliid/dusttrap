@@ -40,3 +40,24 @@ class NaturalLanguageProcessing:
         sel_gu = response.json()['queryResult']['parameters']['selected_gu']
 
         return sel_gu
+
+    def return_sido(self, project_id, session_id, text, language_code):
+        oauth_key = json.load(open('dialogflow_key.json'))
+        scope = 'https://www.googleapis.com/auth/dialogflow'
+        auth = ServiceAccount.from_json(key=oauth_key, scopes=scope)
+        request_url = self.DIALOGFLOW_URL + key.SESSION_ID + ":detectIntent"
+        headers = {'Content-Type': 'application/json', 'charset': 'utf-8', 'Authorization': 'Bearer ' +
+                                                                                            auth.access_token}
+        parameters = {
+            "queryInput": {
+                "text": {
+                    "text": text,
+                    "languageCode": language_code
+                }
+            }
+        }
+        print('>>>>> NLP return_sido() function working now...')
+        response = requests.post(request_url, data=json.dumps(parameters), headers=headers)
+        sel_sido = response.json()['queryResult']['parameters']['selected_sido']
+
+        return sel_sido
