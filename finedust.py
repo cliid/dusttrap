@@ -24,7 +24,6 @@ class FineDustRequest:
         if data['totalCount'] == 0 or data['totalCount'] == '0':
             response = requests.get(url=sido_req_url)
             data = response.json()
-        else:
 
         pm10_value = str(data['list'][0]['pm10Value'])
         pm25_value = str(data['list'][0]['pm25Value'])
