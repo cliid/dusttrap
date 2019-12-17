@@ -30,6 +30,7 @@ def redirect_v1():
 
 @app.route('/support/bugreport')
 def bugreport():
+    return render_template('support/bugreport/index.html')
 
 @app.route('/v1.0/')
 def hello():
