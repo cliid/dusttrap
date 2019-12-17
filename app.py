@@ -19,7 +19,7 @@ from nlp import NaturalLanguageProcessing
 
 os.environ['GOOGLE_APPLICATION_CREDENTIALS'] = 'dialogflow_key.json'
 
-app = Flask(__name__, static_url_path='')
+app = Flask(__name__)
 
 dust_version = 'v1.0a.1000.01.r1'
 
@@ -28,9 +28,19 @@ dust_version = 'v1.0a.1000.01.r1'
 def redirect_v1():
     return redirect('/v1.0/')
 
-@app.route('/support/bugreport')
-def bugreport():
-    return render_template('support/bugreport/index.html')
+
+@app.route('/support/bugreport', methods=['GET', 'POST'])
+def bug_report():
+    global_id = 0
+    if request.method == 'GET':
+        request_id = request.args.get('id')
+        return render_template('support/bugreport/index.html', id=request_id)
+    if request.method == 'POST':
+        suggestions = request.form['suggestions']
+        bug = request.form['bug']
+        print(suggestions + bug)
+        return suggestions + bug
+
 
 @app.route('/v1.0/')
 def hello():
