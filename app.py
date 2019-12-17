@@ -10,7 +10,7 @@ for more, please see: https://github.com/HackerJang
 
 import os
 
-from flask import Flask, request, jsonify, redirect
+from flask import Flask, request, jsonify, redirect, render_template
 
 import key
 from facebook import FacebookMessenger
@@ -21,13 +21,15 @@ os.environ['GOOGLE_APPLICATION_CREDENTIALS'] = 'dialogflow_key.json'
 
 app = Flask(__name__, static_url_path='')
 
-mw_version = 'v1.0a.1000.01.r1'
+dust_version = 'v1.0a.1000.01.r1'
 
 
 @app.route('/')
 def redirect_v1():
     return redirect('/v1.0/')
 
+@app.route('/support/bugreport')
+def bugreport():
 
 @app.route('/v1.0/')
 def hello():
