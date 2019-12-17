@@ -54498,3 +54498,179 @@ mapped 64400 bytes (62 KB) for 1 cores
 WSGI app 0 (mountpoint='') ready in 2 seconds on interpreter 0xd1e7e0 pid: 27748 (default app)
 *** uWSGI is running in multiple interpreter mode ***
 spawned uWSGI worker 1 (and the only) (pid: 27748, cores: 1)
+[pid: 27748|app: 0|req: 1/1] 173.252.83.13 () {38 vars in 502 bytes} [Tue Dec 17 19:58:54 2019] GET / => generated 219 bytes in 5 msecs (HTTP/1.1 302) 3 headers in 125 bytes (1 switches on core 0)
+[pid: 27748|app: 0|req: 2/2] 173.252.83.13 () {38 vars in 512 bytes} [Tue Dec 17 19:58:55 2019] GET /v1.0/ => generated 22 bytes in 0 msecs (HTTP/1.1 200) 2 headers in 79 bytes (1 switches on core 0)
+[pid: 27748|app: 0|req: 3/3] 173.252.83.3 () {38 vars in 501 bytes} [Tue Dec 17 19:58:56 2019] GET / => generated 219 bytes in 1 msecs (HTTP/1.1 302) 3 headers in 125 bytes (1 switches on core 0)
+[pid: 27748|app: 0|req: 4/4] 173.252.83.3 () {38 vars in 511 bytes} [Tue Dec 17 19:58:56 2019] GET /v1.0/ => generated 22 bytes in 1 msecs (HTTP/1.1 200) 2 headers in 79 bytes (1 switches on core 0)
+[pid: 27748|app: 0|req: 5/5] 173.252.83.15 () {38 vars in 502 bytes} [Tue Dec 17 19:58:58 2019] GET / => generated 219 bytes in 3 msecs (HTTP/1.1 302) 3 headers in 125 bytes (1 switches on core 0)
+[pid: 27748|app: 0|req: 6/6] 173.252.83.15 () {38 vars in 512 bytes} [Tue Dec 17 19:58:58 2019] GET /v1.0/ => generated 22 bytes in 1 msecs (HTTP/1.1 200) 2 headers in 79 bytes (1 switches on core 0)
+*** Starting uWSGI 2.0.18 (32bit) on [Tue Dec 17 20:00:00 2019] ***
+compiled with version: 8.3.0 on 16 July 2019 12:06:45
+os: Linux-4.19.86-v7l+ #1283 SMP Fri Nov 29 18:37:40 GMT 2019
+nodename: wiki.mlsp.kr
+machine: armv7l
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 4
+current working directory: /
+detected binary path: /home/pi/code/dusttrap/venv/bin/uwsgi
+chdir() to /home/pi/code/dusttrap
+*** WARNING: you are running uWSGI without its master process manager ***
+your processes number limit is 29184
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to UNIX address /tmp/dusttrap.sock fd 3
+Python version: 3.7.3 (default, Apr  3 2019, 05:39:12)  [GCC 8.2.0]
+Set PythonHome to /home/pi/code/dusttrap/venv
+*** Python threads support is disabled. You can enable it with --enable-threads ***
+Python main interpreter initialized at 0x172a7e0
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 64400 bytes (62 KB) for 1 cores
+*** Operational MODE: single process ***
+  File "./app.py", line 34
+    @app.route('/v1.0/')
+    ^
+IndentationError: expected an indented block
+unable to load app 0 (mountpoint='') (callable not found or import error)
+*** no app loaded. going in full dynamic mode ***
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI worker 1 (and the only) (pid: 27777, cores: 1)
+*** Starting uWSGI 2.0.18 (32bit) on [Tue Dec 17 20:01:30 2019] ***
+compiled with version: 8.3.0 on 16 July 2019 12:06:45
+os: Linux-4.19.86-v7l+ #1283 SMP Fri Nov 29 18:37:40 GMT 2019
+nodename: wiki.mlsp.kr
+machine: armv7l
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 4
+current working directory: /
+detected binary path: /home/pi/code/dusttrap/venv/bin/uwsgi
+chdir() to /home/pi/code/dusttrap
+*** WARNING: you are running uWSGI without its master process manager ***
+your processes number limit is 29184
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to UNIX address /tmp/dusttrap.sock fd 3
+Python version: 3.7.3 (default, Apr  3 2019, 05:39:12)  [GCC 8.2.0]
+Set PythonHome to /home/pi/code/dusttrap/venv
+*** Python threads support is disabled. You can enable it with --enable-threads ***
+Python main interpreter initialized at 0x6157e0
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 64400 bytes (62 KB) for 1 cores
+*** Operational MODE: single process ***
+  File "./app.py", line 34
+    @app.route('/v1.0/')
+    ^
+IndentationError: expected an indented block
+unable to load app 0 (mountpoint='') (callable not found or import error)
+*** no app loaded. going in full dynamic mode ***
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI worker 1 (and the only) (pid: 27799, cores: 1)
+*** Starting uWSGI 2.0.18 (32bit) on [Tue Dec 17 20:03:01 2019] ***
+compiled with version: 8.3.0 on 16 July 2019 12:06:45
+os: Linux-4.19.86-v7l+ #1283 SMP Fri Nov 29 18:37:40 GMT 2019
+nodename: wiki.mlsp.kr
+machine: armv7l
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 4
+current working directory: /
+detected binary path: /home/pi/code/dusttrap/venv/bin/uwsgi
+chdir() to /home/pi/code/dusttrap
+*** WARNING: you are running uWSGI without its master process manager ***
+your processes number limit is 29184
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to UNIX address /tmp/dusttrap.sock fd 3
+Python version: 3.7.3 (default, Apr  3 2019, 05:39:12)  [GCC 8.2.0]
+Set PythonHome to /home/pi/code/dusttrap/venv
+*** Python threads support is disabled. You can enable it with --enable-threads ***
+Python main interpreter initialized at 0x37b7e0
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 64400 bytes (62 KB) for 1 cores
+*** Operational MODE: single process ***
+  File "./app.py", line 34
+    @app.route('/v1.0/')
+    ^
+IndentationError: expected an indented block
+unable to load app 0 (mountpoint='') (callable not found or import error)
+*** no app loaded. going in full dynamic mode ***
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI worker 1 (and the only) (pid: 27819, cores: 1)
+*** Starting uWSGI 2.0.18 (32bit) on [Tue Dec 17 20:04:31 2019] ***
+compiled with version: 8.3.0 on 16 July 2019 12:06:45
+os: Linux-4.19.86-v7l+ #1283 SMP Fri Nov 29 18:37:40 GMT 2019
+nodename: wiki.mlsp.kr
+machine: armv7l
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 4
+current working directory: /
+detected binary path: /home/pi/code/dusttrap/venv/bin/uwsgi
+chdir() to /home/pi/code/dusttrap
+*** WARNING: you are running uWSGI without its master process manager ***
+your processes number limit is 29184
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to UNIX address /tmp/dusttrap.sock fd 3
+Python version: 3.7.3 (default, Apr  3 2019, 05:39:12)  [GCC 8.2.0]
+Set PythonHome to /home/pi/code/dusttrap/venv
+*** Python threads support is disabled. You can enable it with --enable-threads ***
+Python main interpreter initialized at 0xa5a7e0
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 64400 bytes (62 KB) for 1 cores
+*** Operational MODE: single process ***
+  File "./app.py", line 34
+    @app.route('/v1.0/')
+    ^
+IndentationError: expected an indented block
+unable to load app 0 (mountpoint='') (callable not found or import error)
+*** no app loaded. going in full dynamic mode ***
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI worker 1 (and the only) (pid: 27858, cores: 1)
+*** Starting uWSGI 2.0.18 (32bit) on [Tue Dec 17 20:06:02 2019] ***
+compiled with version: 8.3.0 on 16 July 2019 12:06:45
+os: Linux-4.19.86-v7l+ #1283 SMP Fri Nov 29 18:37:40 GMT 2019
+nodename: wiki.mlsp.kr
+machine: armv7l
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 4
+current working directory: /
+detected binary path: /home/pi/code/dusttrap/venv/bin/uwsgi
+chdir() to /home/pi/code/dusttrap
+*** WARNING: you are running uWSGI without its master process manager ***
+your processes number limit is 29184
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to UNIX address /tmp/dusttrap.sock fd 3
+Python version: 3.7.3 (default, Apr  3 2019, 05:39:12)  [GCC 8.2.0]
+Set PythonHome to /home/pi/code/dusttrap/venv
+*** Python threads support is disabled. You can enable it with --enable-threads ***
+Python main interpreter initialized at 0x5bb7e0
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 64400 bytes (62 KB) for 1 cores
+*** Operational MODE: single process ***
+  File "./app.py", line 34
+    @app.route('/v1.0/')
+    ^
+IndentationError: expected an indented block
+unable to load app 0 (mountpoint='') (callable not found or import error)
+*** no app loaded. going in full dynamic mode ***
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI worker 1 (and the only) (pid: 27881, cores: 1)
