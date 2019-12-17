@@ -34,7 +34,10 @@ def bug_report():
     global_id = 0
     if request.method == 'GET':
         request_id = request.args.get('id')
-        return render_template('support/bugreport/index.html', id=request_id)
+        if request_id is not None:
+            return render_template('support/bugreport/index.html', id=request_id)
+        else:
+            return render_template('support/error/index.html')
     if request.method == 'POST':
         suggestions = request.form['suggestions']
         bug = request.form['bug']
