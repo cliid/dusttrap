@@ -29,22 +29,6 @@ def redirect_v1():
     return redirect('/v1.0/')
 
 
-@app.route('/support/bugreport', methods=['GET', 'POST'])
-def bug_report():
-    global_id = 0
-    if request.method == 'GET':
-        request_id = request.args.get('id')
-        if request_id is not None:
-            return render_template('support/bugreport/index.html', id=request_id)
-        else:
-            return render_template('support/error/index.html')
-    if request.method == 'POST':
-        suggestions = request.form['suggestions']
-        bug = request.form['bug']
-        print(suggestions + bug)
-        return suggestions + bug
-
-
 @app.route('/v1.0/')
 def hello():
     return 'DustTrap™ Server API'
@@ -391,6 +375,20 @@ def handle_invalid_usage(error):
     response = jsonify(error.to_dict())
     response.status_code = error.status_code
     return response
+
+
+@app.route('/support/bugreport', methods=['GET', 'POST'])
+def bug_report():
+    global_id = 0
+    if request.method == 'GET':
+        request_id = request.args.get('id')
+        if request_id is not None:
+            return render_template('support/bugreport/index.html', id=request_id)
+        else:
+            return render_template('support/error/index.html')
+    if request.method == 'POST':
+
+        return render_template('support/success/index.html')
 
 
 if __name__ == '__main__':
