@@ -266,3 +266,6 @@ key.py
 dt.log
 
 images/
+
+#DATABASE
+databases/

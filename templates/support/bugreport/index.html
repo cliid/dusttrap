@@ -92,15 +92,15 @@
 
                     <div class="mb-3">
                         <label for="title">제목 <span class="text-muted">(필수)</span></label>
-                        <input type="text" class="form-control" id="title" name="title" placeholder="문제나 건의사항에 대해 간략히 적어주세요. 예) '대전 서구' 가 아직 지원되지 않는 곳으로 떠요." value="{{ suggestions }}" required onkeypress="return event.keyCode !== 13;">
+                        <input type="text" class="form-control" id="title" name="title" placeholder="문제나 건의사항에 대해 간략히 적어주세요. 예) '대전 서구' 가 아직 지원되지 않는 곳으로 떠요." value="" required onkeypress="return event.keyCode !== 13;">
                         <div class="invalid-feedback">
                             제목은 비어 있을 수 없습니다.
                         </div>
                     </div>
 
                     <div class="mb-4">
-                        <label for="steps_to_reproduce">버그 발생 과정 / 건의 내용 <span class="text-muted">(필수)</span></label>
-                        <textarea class="form-control" rows="4" id="steps_to_reproduce" name="steps_to_reproduce" placeholder="버그나 건의사항의 자세한 내용을 적어 주세요.&#10;&#10;예) '서울특별시 송파구' 말고 '송파구' 라고 쳐도 되게 해 주세요." value="{{ bug }}" required></textarea>
+                        <label for="suggestions">버그 발생 과정 / 건의 내용 <span class="text-muted">(필수)</span></label>
+                        <textarea class="form-control" rows="4" id="suggestions" name="suggestions" placeholder="버그나 건의사항의 자세한 내용을 적어 주세요.&#10;&#10;예) '서울특별시 송파구' 말고 '송파구' 라고 쳐도 되게 해 주세요." value="" required></textarea>
                         <div class="invalid-feedback">
                             버그 발생 과정을 적어주세요.
                         </div>

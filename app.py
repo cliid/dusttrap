@@ -8,11 +8,14 @@ All rights reserved.
 for more, please see: https://github.com/HackerJang
 """
 
+import key
 import os
+import logging
+
+from database import DataBase
 
 from flask import Flask, request, jsonify, redirect, render_template
 
-import key
 from facebook import FacebookMessenger
 from finedust import FineDustRequest
 from nlp import NaturalLanguageProcessing
@@ -379,7 +382,6 @@ def handle_invalid_usage(error):
 
 @app.route('/support/bugreport', methods=['GET', 'POST'])
 def bug_report():
-    global_id = 0
     if request.method == 'GET':
         request_id = request.args.get('id')
         if request_id is not None:
@@ -387,6 +389,18 @@ def bug_report():
         else:
             return render_template('support/error/index.html')
     if request.method == 'POST':
+
+        user_id = request.form['id']
+        title = request.form['title']
+        suggestions = request.form['suggestions']
+        try:
+            want_contact = request.form['want_contact']
+            contact_information = request.form['contact_information']
+        except:
+            print("No Contact Info...")
+
+        db = DataBase()
+        db.create_user(user_id, title, suggestions)
 
         return render_template('support/success/index.html')
 
