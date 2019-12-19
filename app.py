@@ -32,9 +32,14 @@ def redirect_v1():
     return redirect('/v1.0/')
 
 
+@app.route('/chat')
+def chat():
+    return render_template('chat/index.html')
+
+
 @app.route('/v1.0/')
 def hello():
-    return 'DustTrap™ Server API'
+    return '미세봇™ v1 API!'
 
 
 @app.route('/v1.0/webhook', methods=['GET', 'POST'])
