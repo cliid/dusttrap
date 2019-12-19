@@ -9,7 +9,7 @@ class DataBase:
         c = conn.cursor()
 
         c.execute(
-            "INSERT INTO user VALUES ('%s', '%s', '%s')" % (user_id, title, suggestions))
+            "INSERT INTO user VALUES (?, ?, ?)", (user_id, title, suggestions))
         conn.commit()
         conn.close()
 

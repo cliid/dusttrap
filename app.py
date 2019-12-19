@@ -10,6 +10,7 @@ for more, please see: https://github.com/HackerJang
 
 import key
 import os
+import logging
 
 from database import DataBase
 
@@ -389,9 +390,18 @@ def bug_report():
             return render_template('support/error/index.html')
     if request.method == 'POST':
 
-        user_id = request.form['id']
-        title = request.form['title']
-        suggestions = request.form['suggestions']
+        user_id = str(request.form['id'])
+        title = str(request.form['title'])
+        suggestions = str(request.form['suggestions'])
+
+        user_id.replace("'", '"')
+        title.replace("'", '"')
+        suggestions.replace("'", '"')
+
+        logging.critical(user_id)
+        logging.critical(title)
+        logging.critical(suggestions)
+
         try:
             want_contact = request.form['want_contact']
             contact_information = request.form['contact_information']
