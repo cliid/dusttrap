@@ -10,7 +10,6 @@ for more, please see: https://github.com/HackerJang
 
 import key
 import os
-import logging
 
 from database import DataBase
 
@@ -78,10 +77,10 @@ def messenger():
                                 user_info = fb.get_user_info(recipient_id)
 
                                 if user_info['result'] == 'success':
-                                    fb.qr_know_me(recipient_id)
+                                    fb.send_text_message(recipient_id, '만나서 반가워요! 그럼 이제 제 기능을 알아볼까요?')
                                 else:
                                     if user_info['code'] == 'FB_PAGE':
-                                        fb.qr_know_me(recipient_id)
+                                        fb.send_text_message(recipient_id, '만나서 반가워요! 그럼 이제 제 기능을 알아볼까요?')
                                     else:
                                         message = user_info['error']
                                         fb.send_text_message(recipient_id, message)

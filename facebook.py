@@ -341,7 +341,7 @@ class FacebookMessenger:
                 "id": recipient_id
             },
             "messaging_type": "RESPONSE",
-            "text": "만나서 반가워요! 이제 한번 제가 할 수 있는 것들에 대해 알아볼까요?",
+            "text": "만나서 반가워요! 이제 한번 제 기능들에 대해 알아볼까요?",
             "message": {
                 "quick_replies": [
                     {
