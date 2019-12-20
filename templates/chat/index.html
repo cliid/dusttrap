@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -27,34 +28,34 @@
     <meta name="msapplication-TileImage" content="/static/favicons/ms-icon-144x144.png">
     <meta name="theme-color" content="#ec534e">
 </head>
+
 <body>
-<!-- Load Facebook SDK for JavaScript -->
-      <div id="fb-root"></div>
-      <script>
+    <!-- Load Facebook SDK for JavaScript -->
+    <div id="fb-root"></div>
+    <script>
         window.fbAsyncInit = function() {
-          FB.init({
-            xfbml            : true,
-            version          : 'v5.0'
-          });
+            FB.init({
+                xfbml: true,
+                version: 'v5.0'
+            });
         };
 
         (function(d, s, id) {
-        var js, fjs = d.getElementsByTagName(s)[0];
-        if (d.getElementById(id)) return;
-        js = d.createElement(s); js.id = id;
-        js.src = 'https://connect.facebook.net/ko_KR/sdk/xfbml.customerchat.js';
-        fjs.parentNode.insertBefore(js, fjs);
-      }(document, 'script', 'facebook-jssdk'));</script>
+            var js, fjs = d.getElementsByTagName(s)[0];
+            if (d.getElementById(id)) return;
+            js = d.createElement(s);
+            js.id = id;
+            js.src = 'https://connect.facebook.net/ko_KR/sdk/xfbml.customerchat.js';
+            fjs.parentNode.insertBefore(js, fjs);
+        }(document, 'script', 'facebook-jssdk'));
+    </script>
 
-      <!-- Your customer chat code -->
-      <div class="fb-customerchat"
-           attribution=setup_tool
-           page_id="102129921278799"
-           theme_color="#0084ff"
-           logged_in_greeting="언제, 어디서나 미세먼지 물어보세요! 😇"
-           logged_out_greeting="언제, 어디서나 미세먼지 물어보세요! 😇">
-      </div>
+    <!-- Your customer chat code -->
+    <div class="fb-customerchat" attribution=setup_tool page_id="102129921278799" theme_color="#0084ff" logged_in_greeting="언제, 어디서나 미세먼지 물어보세요! 😇" logged_out_greeting="언제, 어디서나 미세먼지 물어보세요! 😇">
+    </div>
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
     <script src="/static/support/bugreport/bootstrap.bundle.min.js"></script>
+    <p>미세봇™ 실시간 채팅창입니다!</p>
 </body>
+
 </html>
